@@ -32,6 +32,7 @@ describe("VizGrimoireJS data validity", function() {
             files = ds.getData().scm_files;
             // expect(ss.sample_correlation(commits,files)).toBeGreaterThan("0.9");
             // 29/03 it is different: 0.82
+            // 31/03 it is different: 0.78
             expect(ss.sample_correlation(commits,files)).toBeGreaterThan("0.81");        
         });        
         it("Medium added lines and removed lines", function() {
