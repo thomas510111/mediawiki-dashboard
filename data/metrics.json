@@ -706,6 +706,12 @@
         "name" : "Organizations",
         "desc" : "Number of organizations (companies, etc.) with persons active in code review"
     },
+    "scr_submissions" : {
+        "divid" : "scr_submissions",
+        "column" : "submissions",
+        "name" : "scr_submissions",
+        "desc" : "Number of submissions for code review processes"
+    },
     "scr_countries" : {
         "divid" : "scr_countries",
         "column" : "countries",
