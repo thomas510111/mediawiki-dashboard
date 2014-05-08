@@ -269,6 +269,7 @@
             "y_labels" : true,
             "show_markers" : true
         }
+    },
     "its_median_topened_tfa_Normal" : {
         "divid" : "median_tfa_topened_Normal",
         "column" : "Normal",
