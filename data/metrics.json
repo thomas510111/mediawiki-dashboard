@@ -269,6 +269,15 @@
             "y_labels" : true,
             "show_markers" : true
         }
+    "its_median_topened_tfa_Normal" : {
+        "divid" : "median_tfa_topened_Normal",
+        "column" : "Normal",
+        "name" : "Normal",
+        "desc" : "",
+        "envision" : {
+            "y_labels" : true,
+            "show_markers" : true
+        }
     },
     "its_median_topened_tfa_High" : {
         "divid" : "median_topened_tfa_High",
@@ -330,6 +339,16 @@
             "show_markers" : true
         }
     },
+    "its_median_topened_tfc_Normal" : {
+        "divid" : "median_tfc_topened_Normal",
+        "column" : "Normal",
+        "name" : "Normal",
+        "desc" : "",
+        "envision" : {
+            "y_labels" : true,
+            "show_markers" : true
+        }
+    },
     "its_median_topened_tfc_High" : {
         "divid" : "median_topened_tfc_High",
         "column" : "High",
@@ -385,6 +404,16 @@
         "column" : "Low",
         "name" : "Low",
         "desc" : "Median time of open tickets with Low priority",
+        "envision" : {
+            "y_labels" : true,
+            "show_markers" : true
+        }
+    },
+    "its_median_topened_Normal" : {
+        "divid" : "median_topened_Normal",
+        "column" : "Normal",
+        "name" : "Normal",
+        "desc" : "Median time of open tickets with Normal priority",
         "envision" : {
             "y_labels" : true,
             "show_markers" : true
