@@ -787,6 +787,43 @@ var Mediawiki = {};
         }
     }
 
+    function displaySearchRepos(DS, div) {
+        var data_source = null, updater = null;
+
+        data_source = DS.getReposData();
+        updater = function(item) {
+            var url = "repository.html?repository="+item;
+            window.open(url,"_self");
+            return item;
+        };
+
+        html ="<FORM>Search ";
+        html +='<input type="text" class="typeahead">';
+        html += "</FORM>";
+
+        $("#"+div).append(html);
+        $('.typeahead').typeahead({
+            source: data_source,
+            updater: updater
+        });
+    }
+
+    Mediawiki.convertSearchRepos = function() {
+        var mark = "SearchRepos";
+        var divs = $("."+mark);
+        if (divs.length > 0) {
+            var unique = 0;
+            $.each(divs, function(id, div) {
+                div.id = mark + (unique++);
+                var ds = $(this).data('data-source');
+                var DS = Report.getDataSourceByName(ds);
+                if (DS === null) return;
+                displaySearchRepos(DS, div.id);
+            });
+        }
+    }
+
+
     Mediawiki.build = function() {
         loadContribs(Mediawiki.convertContribs);
         loadPeopleGone(Mediawiki.convertPeopleGone);
@@ -794,6 +831,7 @@ var Mediawiki = {};
         loadTopIssues(Mediawiki.convertTopIssues);
         loadPeopleIntake(Mediawiki.convertPeopleIntake);
         loadPeopleTopAll(Mediawiki.convertPeopleTopAll);
+        Mediawiki.convertSearchRepos();
     };
 })();
 
