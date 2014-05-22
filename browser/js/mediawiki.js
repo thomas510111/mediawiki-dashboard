@@ -119,15 +119,18 @@ var Mediawiki = {};
         }
         table += "</table>";
         if (search) {
+            html +='<div id="scrollable-dropdown-menu">';
             html +="<FORM>Search ";
-            html +='<input type="text" class="typeahead">';
+            html +='<input type="text" class="typeahead" placeholder="Values">';
             html += "</FORM>";
+            html += "</div>";
         }
         html += table;
-        var data_source = null, updater = null;
+        var data_source = null, updater = null, data_source_names = null;
 
         if (type === "people") {
             data_source = contribs_people.name;
+            data_source_names = "people";
             updater = function(item) {
                 var id = getIdByName(item, type);
                 var url = "people.html?id="+id+"&name="+item;
@@ -137,6 +140,7 @@ var Mediawiki = {};
         }
         else if (type === "companies") {
             data_source = contribs_companies.name;
+            data_source_names = "companies";
             updater = function(item) {
                 var id = getIdByName(item, type);
                 var url = "company.html?id="+id+"&name="+item;
@@ -145,11 +149,52 @@ var Mediawiki = {};
             };
         }
 
+        var substringMatcher = function(strs) {
+            return function findMatches(q, cb) {
+              var matches, substringRegex;
+
+              // an array that will be populated with substring matches
+              matches = [];
+
+              // regex used to determine if a string contains the substring `q`
+              substrRegex = new RegExp(q, 'i');
+
+              // iterate through the pool of strings and for any string that
+              // contains the substring `q`, add it to the `matches` array
+              $.each(strs, function(i, str) {
+                if (substrRegex.test(str)) {
+                  // the typeahead jQuery plugin expects suggestions to a
+                  // JavaScript object, refer to typeahead docs for more info
+                  matches.push({ value: str });
+                }
+              });
+
+              cb(matches);
+            };
+        };
+
         $("#"+div).append(html);
-        $('.typeahead').typeahead({
-            source: data_source,
-            updater: updater
-        });
+        if (typeof twitter_typeahead === "undefined") {
+            $('.typeahead').typeahead({
+                source: data_source,
+                updater: updater
+            });
+        } else {
+            // Changed to Twitter typeahead library
+            $('.typeahead').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+              },
+              {
+                name: data_source_names,
+                displayKey: 'value',
+                source: substringMatcher(data_source)
+              });
+            $('.typeahead').bind('typeahead:selected', function(obj, datum, name) {
+                updater(datum.value);
+            });
+        }
     }
 
     // Load all needed info at the start
