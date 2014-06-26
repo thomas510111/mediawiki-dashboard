@@ -614,10 +614,11 @@ var Mediawiki = {};
         var people_ids = orderPeopleTopAll();
         var people_all = Mediawiki.getPeopleTopAll();
         var identities = Report.getPeopleIdentities();
-        var table = "<table class='table table-hover' ";
+        var table = "<table class='table table-hover' id='top-people'";
         table += "style='border-collapse:separate;border-spacing:10px 0px;'>";
         var data_sources = getPeopleTopAllDataSources();
         table += "<tr>";
+        table += "<thead>";
         table += "<th>Rank</th><th>Name</th>";
         for (var i = 0; i < data_sources.length; i++) {
             var title = Report.getDataSourceByName(data_sources[i]).getTitle();
@@ -626,6 +627,7 @@ var Mediawiki = {};
         table += "<th>Location</th>";
         table += "<th>Affiliation</th>";
         table += "</tr>";
+        table += "</thead>";
         for (var i=0; i < people_ids.length; i++) {
             var pid = people_ids[i];
             var person_data = people_all[pid];
@@ -654,8 +656,8 @@ var Mediawiki = {};
         }
         table += "</table>";
         $("#"+divid).html(table);
+        $("#top-people").tablesorter();
 
-        // $("#"+divid).html("<h1>People TopAll</h1>");
     }
 
     Mediawiki.convertPeopleTopAll = function() {
