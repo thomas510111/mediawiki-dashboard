@@ -685,8 +685,8 @@
     "scr_new" : {
         "divid" : "scr_new",
         "column" : "new",
-        "name" : "New reviews",
-        "desc" : "Number of new review processes"
+        "name" : "New changesets",
+        "desc" : "Number of new changesets submitted."
     },
     "scr_abandoned" : {
         "divid" : "scr_abandoned",
