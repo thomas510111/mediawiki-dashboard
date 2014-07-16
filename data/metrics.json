@@ -796,8 +796,8 @@
     },
     "scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median" : {
         "column" : "review_time_pending_ReviewsWaitingForReviewer_days_acc_median",
-        "name" : "Review time for pending in days waiting for reviewer.",
-        "desc" : "Median review time for pending submissions waiting for reviewer in days"
+        "name" : "Initial uploads",
+        "desc" : "Median age of changesets counting since their initial patch was uploaded (days)."
     },
     "scr_review_time_pending_update_days_acc_median" : {
         "column" : "review_time_pending_update_days_acc_median",
@@ -806,8 +806,8 @@
     },
     "scr_review_time_pending_update_ReviewsWaitingForReviewer_days_acc_median" : {
         "column" : "review_time_pending_update_ReviewsWaitingForReviewer_days_acc_median",
-        "name" : "Update time for pending reviews waiting for reviewer in days",
-        "desc" : "Median update time for pending submissions waiting for reviewer in days"
+        "name" : "Most recent uploads",
+        "desc" : "Median age of changesets counting since their most recent patch was  uploaded (days)."
     }
 }
 }
