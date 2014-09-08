@@ -806,6 +806,16 @@
     },
     "scr_review_time_pending_update_ReviewsWaitingForReviewer_days_acc_median" : {
         "column" : "review_time_pending_update_ReviewsWaitingForReviewer_days_acc_median",
+        "name" : "Most recent updates",
+        "desc" : "Median age of changesets counting since updated (days)."
+    },
+    "scr_review_time_pending_upload_days_acc_median" : {
+        "column" : "review_time_pending_upload_days_acc_median",
+        "name" : "Upload time for pending in days",
+        "desc" : "Median upload time for pending submissions in days"
+    },
+    "scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" : {
+        "column" : "review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median",
         "name" : "Most recent uploads",
         "desc" : "Median age of changesets counting since their most recent patch was  uploaded (days)."
     }
