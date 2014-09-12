@@ -776,8 +776,8 @@
     },
     "scr_ReviewsWaiting_ts" : {
         "column" : "ReviewsWaiting_ts",
-        "name" : "Waiting",
-        "desc" : "Amount of open changesets waiting. Tracking and -1 changesets are not counted."
+        "name" : "New changesets",
+        "desc" : "Amount of open changesets. Tracking and -1 changesets are not counted."
     },
     "scr_ReviewsWaitingForReviewer" : {
         "column" : "ReviewsWaitingForReviewer",
