@@ -58,10 +58,13 @@ Who is doing better and worse?
  -->
       <h4>Age of open changesets</h4>
 
+    <!--  data-metrics="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
+
       <div class="MetricsEvol" data-data-source="scr"
         data-remove-last-point1="true"
-        data-metrics="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
-        data-legend="true" data-frame-time="true" data-start="1367359200"></div>
+        data-metrics="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median"
+        data-remove-last-point="true" data-legend="false"
+        data-frame-time="true" data-start="1367359200"></div>
 
       <!--       <div class="MetricsEvol" data-data-source="scr" data-remove-last-point="true"
         data-metrics="scr_review_time_pending_days_acc_median"
@@ -69,12 +72,13 @@ Who is doing better and worse?
  -->
     </div>
 
+    <!--   data-metric="scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
     <div class="row-fluid">
         <div class="span10">
           <h4>Age of unreviewed changesets by affiliation</h4>
            <div class="FilterItemsMetricsEvol" data-data-source="scr"
             data-legend-div="legend" data-remove-last-point="true"
-            data-metric="scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
+            data-metric="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median"
             data-filter="companies" data-limit="10" data-stacked="false"
             data-mouse_tracker="track_formatter_com_pending"
             data-start="1367359200"></div>
