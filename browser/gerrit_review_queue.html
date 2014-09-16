@@ -34,9 +34,8 @@ Who is doing better and worse?
       <h2>Code review queue</h2>
       <div class="row-fluid">
         <h4>Volume of open changesets</h4>
-        <!--  data-metrics="scr_ReviewsWaiting_ts,scr_ReviewsWaitingForReviewer_ts" -->
         <div class="MetricsEvol" data-data-source="scr"
-          data-metrics="scr_ReviewsWaiting_ts"
+          data-metrics="scr_ReviewsWaiting_ts,scr_ReviewsWaitingForReviewer_ts"
           data-min1="true" style="height: 120px;"
           data-legend="false"></div>
       </div>
@@ -59,11 +58,9 @@ Who is doing better and worse?
  -->
       <h4>Age of open changesets</h4>
 
-    <!--  data-metrics="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
-
       <div class="MetricsEvol" data-data-source="scr"
         data-remove-last-point1="true"
-        data-metrics="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median"
+        data-metrics="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
         data-remove-last-point="true" data-legend="false"
         data-frame-time="true" data-start="1367359200"></div>
 
