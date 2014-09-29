@@ -686,7 +686,7 @@
         "divid" : "scr_new",
         "column" : "new",
         "name" : "New changesets",
-        "desc" : "Number of new changesets submitted."
+        "desc" : "For the current backlog of open changesets, number of changesets with submitted during each month."
     },
     "scr_abandoned" : {
         "divid" : "scr_abandoned",
@@ -777,17 +777,17 @@
     "scr_ReviewsWaiting_ts" : {
         "column" : "ReviewsWaiting_ts",
         "name" : "New changesets",
-        "desc" : "Amount of open changesets. Tracking and -1 changesets are not counted."
+        "desc" : "Number of changesets that are open (not merged nor abandoned) at the end of the specified month."
     },
     "scr_ReviewsWaitingForReviewer" : {
         "column" : "ReviewsWaitingForReviewer",
         "name" : "Waiting for review",
-        "desc" : "Amount of open changesets waiting for reviews. Tracking and -1 changesets are not counted."
+        "desc" : "For the subset of current backlog of open changesets which are waiting for review, number of changesets submitted during each month."
     },
     "scr_ReviewsWaitingForReviewer_ts" : {
         "column" : "ReviewsWaitingForReviewer_ts",
         "name" : "Waiting for review",
-        "desc" : "Amount of open changesets waiting for reviews. Tracking and -1 changesets are not counted."
+        "desc" : "Subset of open changesets that are waiting for review (not 'WIP', with no review or just +1) at the end of the specified month. Open changesets with 'WIP' in the subject or with -1/-2 are not counted."
     },
     "scr_review_time_days_avg" : {
         "column" : "review_time_days_avg",
@@ -806,8 +806,8 @@
     },
     "scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median" : {
         "column" : "review_time_pending_ReviewsWaitingForReviewer_days_acc_median",
-        "name" : "Initial uploads",
-        "desc" : "Median age of changesets counting since their initial patch was uploaded (days)."
+        "name" : "Time from submission",
+        "desc" : "For open changesets at the end of the specified month, median time from the initial upload of those changesets until the end of the specified month."
     },
     "scr_review_time_pending_update_days_acc_median" : {
         "column" : "review_time_pending_update_days_acc_median",
@@ -826,8 +826,8 @@
     },
     "scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" : {
         "column" : "review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median",
-        "name" : "Most recent uploads",
-        "desc" : "Median age of changesets counting since their most recent patch was  uploaded (days)."
+        "name" : "Time from last patchset",
+        "desc" : "For changesets that are still open at the end of the specified month, median time from the last patchset at that time until the end of the specified month."
     }
 }
 }
