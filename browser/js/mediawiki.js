@@ -94,6 +94,30 @@ var Mediawiki = {};
         return id;
     }
 
+    var substringMatcher = function(strs) {
+        return function findMatches(q, cb) {
+          var matches, substringRegex;
+
+          // an array that will be populated with substring matches
+          matches = [];
+
+          // regex used to determine if a string contains the substring `q`
+          substrRegex = new RegExp(q, 'i');
+
+          // iterate through the pool of strings and for any string that
+          // contains the substring `q`, add it to the `matches` array
+          $.each(strs, function(i, str) {
+            if (substrRegex.test(str)) {
+              // the typeahead jQuery plugin expects suggestions to a
+              // JavaScript object, refer to typeahead docs for more info
+              matches.push({ value: str });
+            }
+          });
+          cb(matches);
+        };
+    };
+
+
     function showContribs(div, type, quarter, search, show_links) {
         var quarters = false;
         if (quarter) quarters = true;
@@ -119,11 +143,9 @@ var Mediawiki = {};
         }
         table += "</table>";
         if (search) {
-            html +='<div id="scrollable-dropdown-menu">';
-            html +="<FORM>Search ";
-            html +='<input type="text" class="typeahead" placeholder="Values">';
+            html ="<FORM>Search ";
+            html +='<input type="text" class="typeahead typeahead_'+div+'">';
             html += "</FORM>";
-            html += "</div>";
         }
         html += table;
         var data_source = null, updater = null, data_source_names = null;
@@ -149,39 +171,15 @@ var Mediawiki = {};
             };
         }
 
-        var substringMatcher = function(strs) {
-            return function findMatches(q, cb) {
-              var matches, substringRegex;
-
-              // an array that will be populated with substring matches
-              matches = [];
-
-              // regex used to determine if a string contains the substring `q`
-              substrRegex = new RegExp(q, 'i');
-
-              // iterate through the pool of strings and for any string that
-              // contains the substring `q`, add it to the `matches` array
-              $.each(strs, function(i, str) {
-                if (substrRegex.test(str)) {
-                  // the typeahead jQuery plugin expects suggestions to a
-                  // JavaScript object, refer to typeahead docs for more info
-                  matches.push({ value: str });
-                }
-              });
-
-              cb(matches);
-            };
-        };
-
         $("#"+div).append(html);
         if (typeof twitter_typeahead === "undefined") {
-            $('.typeahead').typeahead({
+            $('.typeahead_'+div).typeahead({
                 source: data_source,
                 updater: updater
             });
         } else {
             // Changed to Twitter typeahead library
-            $('.typeahead').typeahead({
+            $('.typeahead_'+div).typeahead({
                 hint: true,
                 highlight: true,
                 minLength: 1
@@ -191,7 +189,7 @@ var Mediawiki = {};
                 displayKey: 'value',
                 source: substringMatcher(data_source)
               });
-            $('.typeahead').bind('typeahead:selected', function(obj, datum, name) {
+            $('.typeahead_'+div).bind('typeahead:selected', function(obj, datum, name) {
                 updater(datum.value);
             });
         }
@@ -407,7 +405,7 @@ var Mediawiki = {};
         table += "<tr>";
         $.each(data, function(key, value) {
             field = key;
-            table += "<td>"+key+"</td>"
+            table += "<td>"+key+"</td>";
         });
         table += "</tr>";
         for (var i=0; i < data[field].length; i++) {
@@ -415,7 +413,7 @@ var Mediawiki = {};
             $.each(data, function(key, value) {
                 if (key === "url")
                 table += "<td><a href='"+value[i]+"'>url</a></td>";
-                else table += "<td>"+value[i]+"</td>"
+                else table += "<td>"+value[i]+"</td>";
             });
             table += "</tr>";
         }
@@ -479,7 +477,7 @@ var Mediawiki = {};
                 displayPeopleGone(div.id, limit);
             });
         }
-    }
+    };
 
     //
     // PeopleIntake widget
@@ -532,7 +530,7 @@ var Mediawiki = {};
                 displayPeopleIntake(DS, div.id, remove_last_point);
             });
         }
-    }
+    };
 
     //
     // PeopleTopAll widget
@@ -572,7 +570,7 @@ var Mediawiki = {};
                 if (value[i].pos < worst_value) worst_value = value[i].pos;
                 position += value[i].pos;
             }
-            position -= worst_value
+            position -= worst_value;
             people_top.push([id, parseInt(position/(value.length-1),null)]);
         });
         // Sort the array Create an array with people_id ordered by position
@@ -670,7 +668,7 @@ var Mediawiki = {};
                 displayPeopleTopAll(div.id);
             });
         }
-    }
+    };
 
 
     //
@@ -709,7 +707,7 @@ var Mediawiki = {};
             if (data.summary[i].search("(tracking)") > -1) continue;
             table += "<tr>";
             table += "<td><a href='"+data.url[i]+"'>"+ data.issue_id[i]+"</a></td>";
-            table += "<td>"+data.summary[i]+"</td>"
+            table += "<td>"+data.summary[i]+"</td>";
             table += "<td>"+Report.formatValue(data.time[i])+"</td>";
             table += "</tr>";
             ++count;
@@ -730,7 +728,7 @@ var Mediawiki = {};
                 displayTopIssues(div.id, type, limit);
             });
         }
-    }
+    };
 
     //
     // Testing top for Mediawiki widget
@@ -802,7 +800,7 @@ var Mediawiki = {};
                 displayContribs(div.id, type, quarter, search, show_links);
             });
         }
-    }
+    };
 
     Mediawiki.convertPeopleNew = function() {
         var mark = "PeopleNew";
@@ -816,7 +814,7 @@ var Mediawiki = {};
                 displayPeopleNew(div.id, type, limit);
             });
         }
-    }
+    };
 
     Mediawiki.convertPeopleNewActivity = function() {
         var mark = "PeopleNewActivity";
@@ -832,7 +830,7 @@ var Mediawiki = {};
                 displayPeopleNewActivity(DS, div.id, limit);
             });
         }
-    }
+    };
 
     function displaySearchRepos(DS, div) {
         var data_source = null, updater = null;
@@ -849,10 +847,28 @@ var Mediawiki = {};
         html += "</FORM>";
 
         $("#"+div).append(html);
-        $('.typeahead').typeahead({
-            source: data_source,
-            updater: updater
-        });
+
+        if (typeof twitter_typeahead === "undefined") {
+            $('.typeahead').typeahead({
+                source: data_source,
+                updater: updater
+            });
+        } else {
+            // Changed to Twitter typeahead library
+            $('.typeahead').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+              },
+              {
+                name: "Repositories",
+                displayKey: 'value',
+                source: substringMatcher(data_source)
+              });
+            $('.typeahead').bind('typeahead:selected', function(obj, datum, name) {
+                updater(datum.value);
+            });
+        }
     }
 
     Mediawiki.convertSearchRepos = function() {
@@ -868,7 +884,7 @@ var Mediawiki = {};
                 displaySearchRepos(DS, div.id);
             });
         }
-    }
+    };
 
 
     Mediawiki.build = function() {
