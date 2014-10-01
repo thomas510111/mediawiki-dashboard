@@ -1,7 +1,6 @@
 describe("VizGrimoireJS data", function() {
     beforeEach(function() {
         Report.setLog(false);
-        // Report.setLog(true);
         waitsFor(function() {
             return Loader.check_data_loaded();
         }, "It took too long to load data", 1000);
@@ -47,11 +46,6 @@ describe("VizGrimoireJS data", function() {
                 var evol = DS.getData();
                 for (field in evol) {
                     if (DS.getMetrics()[field]) {
-                        if (global[field] === undefined) {
-                            // Report.log(DS.getData());
-                            // Report.log(DS.getMetrics());
-                            Report.log(field);
-                        }
                         expect(global[field]).toBeDefined();
                     }
                 }
