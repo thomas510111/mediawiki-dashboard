@@ -748,6 +748,13 @@
         "name" : "scr_submissions",
         "desc" : "Number of submissions for code review processes"
     },
+    "scr_pending" : {
+        "divid" : "scr_pending",
+        "column" : "pending",
+        "name" : "scr_pending",
+        "desc" : "Number of pending code review processes"
+    },
+    "scr_countries" : {
     "scr_countries" : {
         "divid" : "scr_countries",
         "column" : "countries",
