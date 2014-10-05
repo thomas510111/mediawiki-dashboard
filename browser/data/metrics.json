@@ -755,7 +755,6 @@
         "desc" : "Number of pending code review processes"
     },
     "scr_countries" : {
-    "scr_countries" : {
         "divid" : "scr_countries",
         "column" : "countries",
         "name" : "Countries",

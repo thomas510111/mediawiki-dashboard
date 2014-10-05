@@ -730,6 +730,12 @@
         "name" : "submitted",
         "desc" : "Number of submitted code review processes"
     },
+    "scr_pending" : {
+        "divid" : "scr_pending",
+        "column" : "pending",
+        "name" : "pending",
+        "desc" : "Number of pending code review processes"
+    },
     "scr_companies" : {
         "divid" : "scr_companies",
         "column" : "companies",
