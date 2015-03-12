@@ -23,23 +23,39 @@
 
 
     <div class="row">
+        <div class="col-md-12">
+            <div class="well">
       <h2>Code review queue</h2>
-      <div class="row">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well">
         <h4>Backlog of open changesets (monthly snapshots)</h4>
         <div class="MetricsEvol" data-data-source="scr"
           data-metrics="scr_ReviewsWaiting_ts,scr_ReviewsWaitingForReviewer_ts"
           data-min1="true" style="height: 120px;" data-legend="false"></div>
+          </div>
       </div>
-    </div>
+      </div>
+
     <div class="row">
+        <div class="col-md-12">
+            <div class="well">
       <h4>Distribution of open changesets (by date of submission)</h4>
       <div class="MetricsEvol" data-data-source="scr"
         data-metrics="scr_new,scr_ReviewsWaitingForReviewer"
         data-remove-last-point1="true" data-legend="true" data-frame-time="true"
         data-graph="bars"></div>
+        </div>
+    </div>
     </div>
 
     <div class="row">
+        <div class="col-md-12">
+            <div class="well">
 
       <h4>Age of open changesets (monthly snapshots)</h4>
 
@@ -53,12 +69,16 @@
       <!--       <div class="MetricsEvol" data-data-source="scr" data-remove-last-point="true"
         data-metrics="scr_review_time_pending_days_acc_median"
         data-legend="true" data-frame-time="true"></div>
+
  -->
+        </div>
+    </div>
     </div>
 
     <!--   data-metric="scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
     <div class="row">
-      <div class="col-md-10">
+        <div class="col-md-12">
+      <div class="col-md-10 well">
         <h4>Age of open changesets by affilation (monthly snapshot)</h4>
         <div class="FilterItemsMetricsEvol" data-data-source="scr"
           data-legend-div="legend" data-remove-last-point="true"
@@ -67,23 +87,33 @@
           data-mouse_tracker="track_formatter_com_pending"
           data-start="1367359200"></div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 well">
+          <div class="well">
         <div id="legend"></div>
+        </div>
+      </div>
       </div>
     </div>
 
     <div class="row">
+        <div class="col-md-12">
+            <div class="well">
       <h4>Ranking of repositories</h4>
       <p>Sorted by oldest median age of unreviewed changesets.</p>
     </div>
     <div id="nav" class="row">
+        <div class="col-md-12">
       <div class="FilterItemsNav" data-data-source="scr"
         data-order-by="review_time_pending_upload_ReviewsWaitingForReviewer_days_median"
         data-filter="repos" style="align: center"></div>
+    </div></div>
+    </div>
     </div>
 
     <!--  data-metrics="scr_submitted,scr_ReviewsWaitingForReviewer,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
     <div id="list" class="row">
+        <div class="col-md-12">
+            <div class="well">
       <div class="SearchRepos" data-data-source="scr"></div>
       <div class="FilterItemsMiniCharts" data-data-source="scr"
         data-start="1367359200,1367359200,1367359200,1367359200,1367359200"
@@ -91,7 +121,8 @@
         data-order-by="review_time_pending_upload_ReviewsWaitingForReviewer_days_median"
         data-metrics="scr_ReviewsWaiting_ts,scr_ReviewsWaitingForReviewer_ts,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
         data-filter="repos"></div>
-    </div>
+
+    </div></div></div>
 
     <div class="row" style="margin-top: 10px;">
       <div class="col-md-12">

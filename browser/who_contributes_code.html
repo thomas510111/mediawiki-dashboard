@@ -25,44 +25,67 @@
   <div class="container-fluid">
 
     <div class="row">
-      <h4>Who is contributing merged code each quarter?</h4>
+        <div class="col-md-12">
+            <div class="well">
+                <h4>Who is contributing merged code each quarter?</h4>
+            </div>
+        </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+        <div class="col-md-12">
+      <div class="col-md-6 well">
         <h5>People All-time</h5>
 
         <div class="Contribs" data-type="people"
           style="overflow: auto; height: 400px;"></div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 well">
         <h5>People 2013 Q4</h5>
         <div class="Contribs" data-quarter="2013 4" data-type="people"
           data-search="false" style="overflow: auto; height: 400px;"></div>
       </div>
+
+  </div>
     </div>
 
     <div class="row">
-      <h4>How is the weight of the WMF evolving?</h4>
+        <div class="col-md-12">
+            <div class="well">
+                <h4>How is the weight of the WMF evolving?</h4>
+            </div>
+        </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
+        <div class="col-md-12">
+
+      <div class="col-md-8 well">
+
         <b>Reviews merged</b>
         <div class="FilterItemsMetricsEvol" data-data-source="scr"
           data-legend-div="legend" data-metric="scr_merged"
           data-filter="companies" data-limit="10" data-stacked="true"
           data-start="1367359200" data-end="1406851200"></div>
+
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 well">
         <div id="legend"></div>
       </div>
+
+      </div>
     </div>
 
     <div class="row">
+        <div class="col-md-12">
+            <div class="well">
       <h4>What regions have a higher density of contributors?</h4>
+            </div>
+        </div>
     </div>
 
     <div class="row">
-      <div class="col-md-8">
+        <div class="col-md-12">
+
+      <div class="col-md-8 well">
         <i> <b>Submitted per country (aggregated)</b>
         </i>
         <div class="FilterItemsGlobal" data-data-source="scr"
@@ -71,15 +94,27 @@
           data-order-by="scr_submitted"></div>
       </div>
 
-      <div class="col-md-4" id="countries_legend"></div>
+      <div class="col-md-4 well" id="countries_legend"></div>
+  </div>
     </div>
 
     <div class="row">
+        <div class="col-md-12">
+            <div class="well">
       <h4>The evolution of the total amount of merged commits.</h4>
+            </div>
+        </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+      <div class="well">
       <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_merged"
         data-min1="true" data-legend="true" style="height: 120px;"
         data-remove-last-point1="true" data-start="1367359200"
         data-frame-time1="true" data-help="true"></div>
+    </div>
+    </div>
+    </div>
     </div>
 
 
