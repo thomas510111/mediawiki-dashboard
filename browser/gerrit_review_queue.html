@@ -2,148 +2,152 @@
 
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta charset="utf-8" />
-<title>Gerrit Review Queue KPI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" type="text/css" id="theme" href="css/vizgrimoire.css" />
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="./css/jasny-bootstrap.min.css" rel="stylesheet">
-<link href="css/typeahead.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="css/custom.css" />
-<link rel="shortcut icon" href="favicon.png" />
-<link rel="stylesheet" href="css/awesome/css/font-awesome.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Gerrit Review Queue KPI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" id="theme" href="css/vizgrimoire.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="css/typeahead.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="stylesheet" href="css/awesome/css/font-awesome.min.css">
 </head>
 
 <!-- 1367359200: 1 May 2013 -->
 
 <body>
-  <div id="Navbar"></div>
-  <div class="container-fluid">
+    <div id="Navbar"></div>
+    <div class="container-fluid">
 
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-      <h2>Code review queue</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h2>Code review queue</h2>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-        <h4>Backlog of open changesets (monthly snapshots)</h4>
-        <div class="MetricsEvol" data-data-source="scr"
-          data-metrics="scr_ReviewsWaiting_ts,scr_ReviewsWaitingForReviewer_ts"
-          data-min1="true" style="height: 120px;" data-legend="false"></div>
-          </div>
-      </div>
-      </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-      <h4>Distribution of open changesets (by date of submission)</h4>
-      <div class="MetricsEvol" data-data-source="scr"
-        data-metrics="scr_new,scr_ReviewsWaitingForReviewer"
-        data-remove-last-point1="true" data-legend="true" data-frame-time="true"
-        data-graph="bars"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>Backlog of open changesets (monthly snapshots)</h4>
+                    <div class="MetricsEvol" data-data-source="scr"
+                    data-metrics="scr_ReviewsWaiting_ts,scr_ReviewsWaitingForReviewer_ts"
+                    data-min1="true" style="height: 120px;" data-legend="false"></div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-
-      <h4>Age of open changesets (monthly snapshots)</h4>
-
-      <div class="MetricsEvol" data-data-source="scr"
-        data-remove-last-point1="true"
-        data-metrics="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
-        data-mouse_tracker="track_formatter_age_pending"
-        data-remove-last-point1="true" data-legend="false"
-        data-frame-time="true" data-start="1367359200"></div>
-
-      <!--       <div class="MetricsEvol" data-data-source="scr" data-remove-last-point="true"
-        data-metrics="scr_review_time_pending_days_acc_median"
-        data-legend="true" data-frame-time="true"></div>
-
- -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>Distribution of open changesets (by date of submission)</h4>
+                    <div class="MetricsEvol" data-data-source="scr"
+                    data-metrics="scr_new,scr_ReviewsWaitingForReviewer"
+                    data-remove-last-point1="true" data-legend="true" data-frame-time="true"
+                    data-graph="bars"></div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
 
-    <!--   data-metric="scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
-    <div class="row">
-        <div class="col-md-12">
-      <div class="col-md-10 well">
-        <h4>Age of open changesets by affilation (monthly snapshot)</h4>
-        <div class="FilterItemsMetricsEvol" data-data-source="scr"
-          data-legend-div="legend" data-remove-last-point="true"
-          data-metric="scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
-          data-filter="companies" data-limit="10" data-stacked="false"
-          data-mouse_tracker="track_formatter_com_pending"
-          data-start="1367359200"></div>
-      </div>
-      <div class="col-md-2 well">
-          <div class="well">
-        <div id="legend"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+
+                    <h4>Age of open changesets (monthly snapshots)</h4>
+
+                    <div class="MetricsEvol" data-data-source="scr"
+                    data-remove-last-point1="true"
+                    data-metrics="scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
+                    data-mouse_tracker="track_formatter_age_pending"
+                    data-remove-last-point1="true" data-legend="false"
+                    data-frame-time="true" data-start="1367359200"></div>
+
+                    <!--       <div class="MetricsEvol" data-data-source="scr" data-remove-last-point="true"
+                    data-metrics="scr_review_time_pending_days_acc_median"
+                    data-legend="true" data-frame-time="true"></div>
+
+                -->
+                </div>
+            </div>
         </div>
-      </div>
-      </div>
+
+
+        <!--   data-metric="scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-10 well">
+                    <h4>Age of open changesets by affilation (monthly snapshot)</h4>
+                    <div class="FilterItemsMetricsEvol" data-data-source="scr"
+                    data-legend-div="legend" data-remove-last-point="true"
+                    data-metric="scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
+                    data-filter="companies" data-limit="10" data-stacked="false"
+                    data-mouse_tracker="track_formatter_com_pending"
+                    data-start="1367359200"></div>
+                </div>
+                <div class="col-md-2 well">
+                    <div class="well">
+                        <div id="legend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>Ranking of repositories</h4>
+                    <p>Sorted by oldest median age of unreviewed changesets.</p>
+                </div>
+                <div id="nav" class="row">
+                    <div class="col-md-12">
+                        <div class="FilterItemsNav" data-data-source="scr"
+                        data-order-by="review_time_pending_upload_ReviewsWaitingForReviewer_days_median"
+                        data-filter="repos" style="align: center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  data-metrics="scr_submitted,scr_ReviewsWaitingForReviewer,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
+        <div id="list" class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <div class="SearchRepos" data-data-source="scr"></div>
+                    <div class="FilterItemsMiniCharts" data-data-source="scr"
+                    data-start="1367359200,1367359200,1367359200,1367359200,1367359200"
+                    data-remove-last-point="true"
+                    data-order-by="review_time_pending_upload_ReviewsWaitingForReviewer_days_median"
+                    data-metrics="scr_ReviewsWaiting_ts,scr_ReviewsWaitingForReviewer_ts,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
+                    data-filter="repos"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-12">
+                <div id="Refcard"></div>
+            </div>
+        </div>
+
+
+        <footer>
+            <div id="Footer"></div>
+        </footer>
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-      <h4>Ranking of repositories</h4>
-      <p>Sorted by oldest median age of unreviewed changesets.</p>
-    </div>
-    <div id="nav" class="row">
-        <div class="col-md-12">
-      <div class="FilterItemsNav" data-data-source="scr"
-        data-order-by="review_time_pending_upload_ReviewsWaitingForReviewer_days_median"
-        data-filter="repos" style="align: center"></div>
-    </div></div>
-    </div>
-    </div>
-
-    <!--  data-metrics="scr_submitted,scr_ReviewsWaitingForReviewer,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" -->
-    <div id="list" class="row">
-        <div class="col-md-12">
-            <div class="well">
-      <div class="SearchRepos" data-data-source="scr"></div>
-      <div class="FilterItemsMiniCharts" data-data-source="scr"
-        data-start="1367359200,1367359200,1367359200,1367359200,1367359200"
-        data-remove-last-point="true"
-        data-order-by="review_time_pending_upload_ReviewsWaitingForReviewer_days_median"
-        data-metrics="scr_ReviewsWaiting_ts,scr_ReviewsWaitingForReviewer_ts,scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median"
-        data-filter="repos"></div>
-
-    </div></div></div>
-
-    <div class="row" style="margin-top: 10px;">
-      <div class="col-md-12">
-        <div id="Refcard"></div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div id="Footer"></div>
-  </footer>
-
-
-  <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" src="lib/bootstrap-3.1.1.min.js"></script>
-  <script src="./lib/jasny-bootstrap-3.1.3.min.js"></script>
-  <script type="text/javascript" src="lib/vizgrimoire.min.js"></script>
-  <script type="text/javascript" src="js/mediawiki.js"></script>
-  <script type="text/javascript">
-            twitter_typeahead = true;
-        </script>
-  <script type="text/javascript" src="js/typeahead.jquery.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-3.1.1.min.js"></script>
+    <script src="./lib/jasny-bootstrap-3.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/vizgrimoire.min.js"></script>
+    <script type="text/javascript" src="js/mediawiki.js"></script>
+    <script type="text/javascript">
+    twitter_typeahead = true;
+    </script>
+    <script type="text/javascript" src="js/typeahead.jquery.js"></script>
 </body>
 </html>
