@@ -2,15 +2,15 @@
 
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta charset="utf-8" />
-<title>Bugzilla Response Time</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" type="text/css" id="theme" href="css/vizgrimoire.css" />
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="./css/jasny-bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/custom.css" />
-<link rel="shortcut icon" href="favicon.png" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Bugzilla Response Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" id="theme" href="css/vizgrimoire.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/jasny-bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <link rel="shortcut icon" href="favicon.png" />
 </head>
 
 <!--
@@ -22,153 +22,162 @@ Are we improving?
 Average time for an accepted bug report between bug creation date and PATCH_TO_REVIEW status being set
 Average time for an accepted bug report between PATCH_TO_REVIEW status being set and RESOLVED FIXED status being set.
 Average time for an accepted bug report between bug creation date and first comment by not the reporter her/himself.
- -->
+-->
 
 <body>
 
-  <div id="Navbar"></div>
+    <div id="Navbar"></div>
 
-  <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-      <h4>How long does it take to give a first response to reporters of
-        Low-Immediate / trivial-blocker bugs?</h4>
-    </div></div></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>How long does it take to give a first response to reporters of
+                        Low-Immediate / trivial-blocker bugs?</h4>
+                    </div>
+                </div>
+            </div>
 
-      <!-- tfa -->
-      <h4>Unattended Tickets</h4>
+            <!-- tfa -->
+            <h4>Unattended Tickets</h4>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="well">
-            <div class="MetricsEvol" data-data-source="its"
-              data-metrics="its_median_topened_tfa,its_median_topened_tfa_Unprioritized,its_median_topened_tfa_Low,its_median_topened_tfa_Normal,its_median_topened_tfa_High,its_median_topened_tfa_Highest,its_median_topened_tfa_Immediate"
-              data-legend="true" data-frame-time="yes"
-              data-custom-title="<strong>Median age of unattended tickets (by priority)</strong>"
-              data-help="true"
-              data-custom-help="<ul>
-                                  <li>X axis shows time spots (one per month).</li>
-                                  <li>Y axis shows median age (in days) of unattended tickets at those spots.</li>
-                                  <li>Unattended tickets at a certain time spot are those which are open but
-                                  had no actions by others than the reporter.</li>
-                                  <li>Actions include state changes and comments.</li>
-                                  </ul>"
-              style="height: 220px;"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <div class="MetricsEvol" data-data-source="its"
+                        data-metrics="its_median_topened_tfa,its_median_topened_tfa_Unprioritized,its_median_topened_tfa_Low,its_median_topened_tfa_Normal,its_median_topened_tfa_High,its_median_topened_tfa_Highest,its_median_topened_tfa_Immediate"
+                        data-legend="true" data-frame-time="yes"
+                        data-custom-title="<strong>Median age of unattended tickets (by priority)</strong>"
+                        data-help="true"
+                        data-custom-help="<ul>
+                            <li>X axis shows time spots (one per month).</li>
+                            <li>Y axis shows median age (in days) of unattended tickets at those spots.</li>
+                            <li>Unattended tickets at a certain time spot are those which are open but
+                                had no actions by others than the reporter.</li>
+                                <li>Actions include state changes and comments.</li>
+                            </ul>"
+                            style="height: 220px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end tfa -->
 
-          </div>
+            <!-- tfc -->
+            <h4>Uncommented Tickets</h4>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <div class="MetricsEvol" data-data-source="its"
+                        data-metrics="its_median_topened_tfc,its_median_topened_tfc_Unprioritized,its_median_topened_tfc_Low,its_median_topened_tfc_Normal,its_median_topened_tfc_High,its_median_topened_tfc_Highest,its_median_topened_tfc_Immediate"
+                        data-min1="true" data-legend="true" data-frame-time="yes"
+                        data-custom-title="<strong>Median age of uncommented tickets (by priority)</strong>"
+                        data-help="true"
+                        data-custom-help="<ul>
+                            <li>X axis shows time spots (one per month)</li>
+                            <li>Y axis shows median age (in days) of uncommented tickets at those spots.</li>
+                            <li>Uncommented tickets at a certain time spot are those
+                                which are open but still received no comment by ohters than the reporter.</li>
+                            </ul>"
+                            style="height: 220px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end tfc -->
+
+            <!-- topened -->
+            <h4>Opened Tickets</h4>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <div class="MetricsEvol" data-data-source="its"
+                        data-metrics="its_median_topened,its_median_topened_Unprioritized,its_median_topened_Low,its_median_topened_Normal,its_median_topened_High,its_median_topened_Highest,its_median_topened_Immediate"
+                        data-legend="true" data-frame-time="yes" data-help="true"
+                        data-custom-help="<ul>
+                            <li>X axis shows time spots (one per month).</li>
+                            <li>Y axis shows median age (in days) of open tickets at those spots.</li>
+                        </ul>"
+                        data-custom-title="<strong>Median age of open tickets (by priority)</strong>"
+                        style="height: 220px;"></div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- end tfa -->
+        <!-- end topened -->
 
-      <!-- tfc -->
-      <h4>Uncommented Tickets</h4>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="well">
-            <div class="MetricsEvol" data-data-source="its"
-              data-metrics="its_median_topened_tfc,its_median_topened_tfc_Unprioritized,its_median_topened_tfc_Low,its_median_topened_tfc_Normal,its_median_topened_tfc_High,its_median_topened_tfc_Highest,its_median_topened_tfc_Immediate"
-              data-min1="true" data-legend="true" data-frame-time="yes"
-              data-custom-title="<strong>Median age of uncommented tickets (by priority)</strong>"
-              data-help="true"
-              data-custom-help="<ul>
-                                  <li>X axis shows time spots (one per month)</li>
-                                  <li>Y axis shows median age (in days) of uncommented tickets at those spots.</li>
-                                  <li>Uncommented tickets at a certain time spot are those
-                                      which are open but still received no comment by ohters than the reporter.</li>
-                                  </ul>"
-              style="height: 220px;"></div>
-          </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>How long until acknowledged bugs are resolved?</h4>
+                    The same than before because all bugs should be acknowledged.
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- end tfc -->
 
-      <!-- topened -->
-      <h4>Opened Tickets</h4>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="well">
-            <div class="MetricsEvol" data-data-source="its"
-              data-metrics="its_median_topened,its_median_topened_Unprioritized,its_median_topened_Low,its_median_topened_Normal,its_median_topened_High,its_median_topened_Highest,its_median_topened_Immediate"
-              data-legend="true" data-frame-time="yes" data-help="true"
-              data-custom-help="<ul>
-                                  <li>X axis shows time spots (one per month).</li>
-                                  <li>Y axis shows median age (in days) of open tickets at those spots.</li>
-                                  </ul>"
-              data-custom-title="<strong>Median age of open tickets (by priority)</strong>"
-              style="height: 220px;"></div>
-          </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>Are we using the importance parameters consistently?</h4>
+                    First action/resolved for priority/severity fields -> evol in time First
+                    action/resolved for priority/severity fields -> evol in time 4 graphs
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- end topened -->
 
-
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-      <h4>How long until acknowledged bugs are resolved?</h4>
-      The same than before because all bugs should be acknowledged.
-    </div></div></div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-      <h4>Are we using the importance parameters consistently?</h4>
-      First action/resolved for priority/severity fields -> evol in time First
-      action/resolved for priority/severity fields -> evol in time 4 graphs
-      </div></div></div>
-
-      <div class="row">
-          <div class="col-md-12">
-              <div class="well">
-      <h4>Are we improving?</h4>
-      From above
-      </div></div></div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-      <h4>Top 20 tickets</h4>
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="well">Longest time without action</div>
-          <div class="TopIssues" data-data-source="its" data-limit="20"
-            data-type="issues.no action"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>Are we improving?</h4>
+                    From above
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <div class="well">Longest time without comment</div>
-          <div class="TopIssues" data-data-source="its" data-limit="20"
-            data-type="issues.no comment"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>Top 20 tickets</h4>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="well">Longest time without action</div>
+                            <div class="TopIssues" data-data-source="its" data-limit="20"
+                            data-type="issues.no action"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="well">Longest time without comment</div>
+                            <div class="TopIssues" data-data-source="its" data-limit="20"
+                            data-type="issues.no comment"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="well">Longest time without resolution</div>
+                            <div class="TopIssues" data-data-source="its" data-limit="20"
+                            data-type="issues.no resolution"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <div class="well">Longest time without resolution</div>
-          <div class="TopIssues" data-data-source="its" data-limit="20"
-            data-type="issues.no resolution"></div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-12">
+                <div id="Refcard"></div>
+            </div>
         </div>
-      </div>
+
+        <footer>
+            <div id="Footer"></div>
+        </footer>
     </div>
-    </div>
-    </div>
 
-    <div class="row" style="margin-top: 10px;">
-      <div class="col-md-12">
-        <div id="Refcard"></div>
-      </div>
-    </div>
-
-    <footer>
-      <div id="Footer"></div>
-    </footer>
-  </div>
-
-  <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" src="lib/bootstrap-3.1.1.min.js"></script>
-  <script src="./lib/jasny-bootstrap-3.1.3.min.js"></script>
-  <script type="text/javascript" src="lib/vizgrimoire.min.js"></script>
-  <script type="text/javascript" src="js/mediawiki.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-3.1.1.min.js"></script>
+    <script src="./lib/jasny-bootstrap-3.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/vizgrimoire.min.js"></script>
+    <script type="text/javascript" src="js/mediawiki.js"></script>
 </body>
 </html>
