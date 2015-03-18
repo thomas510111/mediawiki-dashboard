@@ -1,1 +1,1 @@
-{"authors": ["Mike Clarke", "John Watson", "David Cramer", "Bob Trahan", "rush", "root"], "commits": [12, 6, 3, 2, 2, 1], "id": [3262973, 3261889, 3261712, 3261704, 583, 3262974]}
+{"authors.": {"authors": ["Mike Clarke", "John Watson", "David Cramer", "rush", "Bob Trahan", "root"], "commits": [12, 8, 5, 4, 2, 1], "id": [3262973, 3261889, 3261712, 583, 3261704, 3262974]}, "authors.last month": {"authors": [], "commits": [], "id": []}, "authors.last year": {"authors": ["rush", "root"], "commits": [4, 1], "id": [583, 3262974]}}
