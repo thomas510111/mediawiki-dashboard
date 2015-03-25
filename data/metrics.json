@@ -460,7 +460,7 @@
             "show_markers" : true
         }
     },
- 
+
     "its_openers" : {
         "divid" : "its_openers",
         "column" : "openers",
@@ -508,7 +508,7 @@
         "column" : "companies",
         "name" : "Organziations",
         "desc" : "Number of organizations (companies, etc.) with persons active in the ticketing system"
-    }, 
+    },
     "its_countries" : {
         "divid" : "its_countries",
         "column" : "countries",
@@ -834,6 +834,20 @@
         "column" : "review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median",
         "name" : "Time from last patchset",
         "desc" : "For changesets that are still open at the end of the specified month, median time from the last patchset at that time until the end of the specified month."
+    },
+    "scr_participants":{
+        "divid" : "scr_participants",
+        "column" : "participants",
+        "name" : "Participants",
+        "desc" : "Number of participants in the review process",
+        "action": "events"
+    },
+    "scr_active_core_reviewers":{
+        "divid" : "scr_active_core_reviewers",
+        "column" : "active_core_reviewers",
+        "name" : "Active core reviewers",
+        "desc" : "Number of active core reviewers",
+        "action": "merged"
     }
 }
 }
