@@ -305,8 +305,8 @@ var Mediawiki = {};
                 table += "<td><a href='"+person_url+"'>"+data.name[i]+"</a></td>";
                 // var affiliation = "-";
                 var affiliation = "Unknown";
-                if (data.upeople_id[i] in identities) {
-                    affiliation = searchAffiliation(identities[data.upeople_id[i]]);
+                if (data.uuid[i] in identities) {
+                    affiliation = searchAffiliation(identities[data.uuid[i]]);
                 } 
                 table += "<td>"+affiliation+"</td>";
                 table += "<td><a href='"+data.url[i]+"'>"+sub_on_date+"</a></td>";
@@ -349,7 +349,7 @@ var Mediawiki = {};
             showPeopleRow(data, i, "submitters");
             // Other activity: Merged, abandoned and graph of activity
             var people_id = data.submitted_by[i];
-            var upeople_id = data.upeople_id[i];
+            var uuid = data.uuid[i];
 
             var people_data = null;
             if (gone) people_data = Mediawiki.getPeopleGone('mergers');
@@ -368,12 +368,12 @@ var Mediawiki = {};
                 showPeopleRow(people_data, index_people, "abandoners");
             } else {table +="<td></td>";}
 
-            if (upeople_id in activity.people) {
-                var people_divid =  "PeopleNew-evol-"+upeople_id;
+            if (uuid in activity.people) {
+                var people_divid =  "PeopleNew-evol-"+uuid;
                 var newdiv = "<div style='height:20px' ";
                 newdiv += "id="+people_divid+"></div>";
                 table += "<td>"+newdiv+"</td>";
-                viz_people.push(upeople_id);
+                viz_people.push(uuid);
             } 
             table += "</tr>";
         }
@@ -594,16 +594,21 @@ var Mediawiki = {};
 
     // In JSON data there are several location. Select one.
     function searchLocation(data) {
-        var location = data.country[0];
+        var location = '-';
+        if ('country' in data) {
+            var location = data.country[0];
+        }
         return location;
     }
 
     // In JSON data there are several location. Select one.
     function searchAffiliation(data) {
-        var affiliation = "";
-        for (var i=0; i<data.affiliation.length;i++) {
-            affiliation = data.affiliation[i];
-            if (affiliation !== "Unknow") break; 
+        var affiliation = "-";
+        if ('affiliation' in data) {
+            for (var i=0; i<data.affiliation.length;i++) {
+                affiliation = data.affiliation[i];
+                if (affiliation !== "Unknow") break; 
+            }
         }
         return affiliation;
     }
@@ -632,7 +637,22 @@ var Mediawiki = {};
             table += "<tr>";
             table += "<td>"+(i+1)+"</td>";
             table += "<td><a href='people.html?id="+pid+"&name='>";
-            if (pid in identities) table += identities[pid].identity[0];
+            if (pid in identities) {
+                if ('identity' in identities[pid]) {
+                    // Pre sortinghat format
+                    table += identities[pid].identity[0];
+                } else {
+                    var people_str;
+                    if (identities[pid].name[0] !== undefined) {
+                        people_str = identities[pid].name[0];
+                    } else if (identities[pid].username[0] !== undefined ){
+                        people_str = identities[pid].username[0];
+                    } else if (identities[pid].email[0] !== undefined ){
+                        people_str = identities[pid].email[0];
+                    }
+                    table += people_str;
+                }
+            }
             else table += pid;
             table += "</a></td>";
             for (var j =0; j < data_sources.length; j++) {
