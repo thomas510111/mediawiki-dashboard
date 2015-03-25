@@ -1,10 +1,10 @@
 
 <!-- commits, authors, stats, top authors -->
 <div class="row">
-  
+
   <!-- left column -->
   <div class="col-md-6">
-    
+
     <div class="row">
       <div class="col-md-12">
 	<div class="well">
@@ -15,7 +15,7 @@
 	</div>
       </div>
     </div>
-    
+
     <!--<div class="row">
 	<div class="well">
           <div class="MetricsEvol" data-data-source="scr"
@@ -23,7 +23,7 @@
                data-frame-time="true"></div>
 	</div>
     </div>-->
-    
+
     <div class="row">
       <div class="col-md-12">
 	<div class="well">
@@ -36,20 +36,33 @@
           <div class="MicrodashText" data-metric="scr_abandoned" data-name="true"></div>
 	</div>
       </div>
-    </div>    
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+	<div class="well">
+          <div class="MetricsEvol" data-data-source="scr"
+               data-metrics="scr_participants,scr_active_core_reviewers"
+               data-min="true" data-legend="true" style="height:200px;"
+               data-frame-time="true" data-help="true"></div>
+          <div class="MicrodashText" data-metric="scr_participants" data-name="true"></div>
+          <div class="MicrodashText" data-metric="scr_active_core_reviewers" data-name="true"></div>
+	</div>
+      </div>
+    </div>
 
   </div>
   <!-- end left column -->
 
   <!-- right column -->
-  <div class="col-md-6">    
+  <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
 
 	<div class="row"><div class="col-md-12">
 	    <p class="section-title"><i class="fa fa-check"></i> Source Code Review</p>
 	</div></div>
-	
+
 	<div class="row">
 	  <div class="col-md-12">
             <table class="table">
@@ -80,7 +93,7 @@
 		<td><span class="GlobalData" data-data-source="scr"
 			  data-field="scr_WaitingForSubmitter"></span></td>
 		<td>code reviews waiting for submitter</td>
-              </tr>	      
+              </tr>
               <tr>
 		<td><span class="GlobalData" data-data-source="scr"
 			  data-field="scr_reviewers"></span></td>
@@ -88,7 +101,7 @@
 		<td><span class="GlobalData" data-data-source="scr"
 			  data-field="scr_reviewers_7"></span></td>
 		<td>code reviewers last week</td>
-              </tr>	      
+              </tr>
               <tr>
 		<td><span class="GlobalData" data-data-source="scr"
 			  data-field="scr_review_time_days_median"></span></td>
@@ -108,9 +121,19 @@
           <div class="Top" data-data-source="scr" data-metric="mergers"></div>
 	</div>
       </div>
+    <div class="panel-body">
+	<div class="col-md-6">
+          <div class="Top" data-data-source="scr" data-metric="participants"></div>
+	</div>
+	<div class="col-md-6">
+          <div class="Top" data-data-source="scr" data-metric="active_core_reviewers"></div>
+	</div>
+      </div>
+
+
     </div>
     <!-- end right column -->
   </div>
   <!-- end commits, authors, stats, top authors -->
-  
+
 </div>
