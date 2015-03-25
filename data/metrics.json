@@ -460,7 +460,12 @@
             "show_markers" : true
         }
     },
- 
+    "its_opened" : {
+        "divid" : "its_opened",
+        "column" : "opened",
+        "name" : "Opened tickets",
+        "desc" : "Number of opened tickets"
+    },
     "its_openers" : {
         "divid" : "its_openers",
         "column" : "openers",
@@ -729,6 +734,12 @@
         "column" : "submitted",
         "name" : "submitted",
         "desc" : "Number of submitted code review processes"
+    },
+    "scr_submitters" : {
+        "divid" : "scr_submitters",
+        "column" : "submitters",
+        "name" : "submitters",
+        "desc" : "Number of submitters to code review processes"
     },
     "scr_pending" : {
         "divid" : "scr_pending",
