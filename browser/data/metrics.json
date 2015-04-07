@@ -1,466 +1,15 @@
 {
 "its": {
-    "its_median_topened_tfa" : {
-        "divid" : "median_topened_tfa",
-        "column" : "Total",
-        "name" : "Total",
-        "desc" : "",
+    "its_opened" : {
+        "divid" : "its_opened",
+        "column" : "opened",
+        "name" : "Opened tickets",
+        "desc" : "Number of opened tickets",
         "envision" : {
             "y_labels" : true,
             "show_markers" : true
         }
     },
-    "its_median_topened_tfa_trivial" : {
-        "divid" : "median_topened_tfa_trivial",
-        "column" : "Trivial",
-        "name" : "Trivial",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_minor" : {
-        "divid" : "median_topened_tfa_minor",
-        "column" : "Minor",
-        "name" : "Minor",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_normal" : {
-        "divid" : "median_topened_tfa_normal",
-        "column" : "Normal",
-        "name" : "Normal",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_major" : {
-        "divid" : "median_topened_tfa_major",
-        "column" : "Major",
-        "name" : "Major",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_blocker" : {
-        "divid" : "median_topened_tfa_blocker",
-        "column" : "Blocker",
-        "name" : "Blocker",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_critical" : {
-        "divid" : "median_topened_tfa_critical",
-        "column" : "Critical",
-        "name" : "Critical",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_enhancement" : {
-        "divid" : "median_topened_tfa_enhancement",
-        "column" : "Enhancement",
-        "name" : "Enhancement",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc" : {
-        "divid" : "median_topened_tfc",
-        "column" : "Total",
-        "name" : "Total",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_trivial" : {
-        "divid" : "median_topened_tfc_trivial",
-        "column" : "Trivial",
-        "name" : "Trivial",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_minor" : {
-        "divid" : "median_topened_tfc_minor",
-        "column" : "Minor",
-        "name" : "Minor",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_normal" : {
-        "divid" : "median_topened_tfc_normal",
-        "column" : "Normal",
-        "name" : "Normal",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_major" : {
-        "divid" : "median_topened_tfc_major",
-        "column" : "Major",
-        "name" : "Major",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_blocker" : {
-        "divid" : "median_topened_tfc_blocker",
-        "column" : "Blocker",
-        "name" : "Blocker",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_critical" : {
-        "divid" : "median_topened_tfc_critical",
-        "column" : "Critical",
-        "name" : "Critical",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_enhancement" : {
-        "divid" : "median_topened_tfc_enhancement",
-        "column" : "Enhancement",
-        "name" : "Enhancement",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened" : {
-        "divid" : "median_topened",
-        "column" : "Total",
-        "name" : "Total",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_trivial" : {
-        "divid" : "median_topened_trivial",
-        "column" : "Trivial",
-        "name" : "Trivial",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_minor" : {
-        "divid" : "median_topened_minor",
-        "column" : "Minor",
-        "name" : "Minor",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_normal" : {
-        "divid" : "median_topened_normal",
-        "column" : "Normal",
-        "name" : "Normal",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_major" : {
-        "divid" : "median_topened_major",
-        "column" : "Major",
-        "name" : "Major",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_blocker" : {
-        "divid" : "median_topened_blocker",
-        "column" : "Blocker",
-        "name" : "Blocker",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_critical" : {
-        "divid" : "median_topened_critical",
-        "column" : "Critical",
-        "name" : "Critical",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_enhancement" : {
-        "divid" : "median_topened_enhancement",
-        "column" : "Enhancement",
-        "name" : "Enhancement",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_Unprioritized" : {
-        "divid" : "median_topened_tfa_Unprioritized",
-        "column" : "Unprioritized",
-        "name" : "Unprioritized",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_Lowest" : {
-        "divid" : "median_topened_tfa_Lowest",
-        "column" : "Lowest",
-        "name" : "Lowest",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_Low" : {
-        "divid" : "median_tfa_topened_Low",
-        "column" : "Low",
-        "name" : "Low",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_Normal" : {
-        "divid" : "median_tfa_topened_Normal",
-        "column" : "Normal",
-        "name" : "Normal",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_High" : {
-        "divid" : "median_topened_tfa_High",
-        "column" : "High",
-        "name" : "High",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_Highest" : {
-        "divid" : "median_topened_tfa_Highest",
-        "column" : "Highest",
-        "name" : "Highest",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfa_Immediate" : {
-        "divid" : "median_topened_tfa_Immediate",
-        "column" : "Immediate",
-        "name" : "Immediate",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_Unprioritized" : {
-        "divid" : "median_topened_tfc_Unprioritized",
-        "column" : "Unprioritized",
-        "name" : "Unprioritized",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_Lowest" : {
-        "divid" : "median_topened_tfc_Lowest",
-        "column" : "Lowest",
-        "name" : "Lowest",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_Low" : {
-        "divid" : "median_tfc_topened_Low",
-        "column" : "Low",
-        "name" : "Low",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_Normal" : {
-        "divid" : "median_tfc_topened_Normal",
-        "column" : "Normal",
-        "name" : "Normal",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_High" : {
-        "divid" : "median_topened_tfc_High",
-        "column" : "High",
-        "name" : "High",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_Highest" : {
-        "divid" : "median_topened_tfc_Highest",
-        "column" : "Highest",
-        "name" : "Highest",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_tfc_Immediate" : {
-        "divid" : "median_topened_tfc_Immediate",
-        "column" : "Immediate",
-        "name" : "Immediate",
-        "desc" : "",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_Unprioritized" : {
-        "divid" : "median_topened_Unprioritized",
-        "column" : "Unprioritized",
-        "name" : "Unprioritized",
-        "desc" : "Median time of open tickets with Unprioritized priority",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_Lowest" : {
-        "divid" : "median_topened_Lowest",
-        "column" : "Lowest",
-        "name" : "Lowest",
-        "desc" : "Median time of open tickets with Lowest priority",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_Low" : {
-        "divid" : "median_topened_Low",
-        "column" : "Low",
-        "name" : "Low",
-        "desc" : "Median time of open tickets with Low priority",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_Normal" : {
-        "divid" : "median_topened_Normal",
-        "column" : "Normal",
-        "name" : "Normal",
-        "desc" : "Median time of open tickets with Normal priority",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_High" : {
-        "divid" : "median_topened_High",
-        "column" : "High",
-        "name" : "High",
-        "desc" : "Median time of open tickets with High priority",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_Highest" : {
-        "divid" : "median_topened_Highest",
-        "column" : "Highest",
-        "name" : "Highest",
-        "desc" : "Median time of open tickets with Highest priority",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_median_topened_Immediate" : {
-        "divid" : "median_topened_Immediate",
-        "column" : "Immediate",
-        "name" : "Immediate",
-        "desc" : "Median time of open tickets with Immediate priority",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
-    "its_avg_topened_Unprioritized" : {
-        "divid" : "avg_topened_Unprioritized",
-        "column" : "Unprioritized",
-        "name" : "Unprioritized",
-        "desc" : "Average time of open tickets with Unprioritized priority",
-        "envision" : {
-            "y_labels" : true,
-            "show_markers" : true
-        }
-    },
- 
     "its_openers" : {
         "divid" : "its_openers",
         "column" : "openers",
@@ -470,12 +19,6 @@
         "envision" : {
             "gtype" : "whiskers"
         }
-    },
-    "its_opened" : {
-        "divid" : "its_opened",
-        "column" : "Opened",
-        "name" : "Opened tickets",
-        "desc" : "Number of opened tickets"
     },
     "its_closed" : {
         "divid" : "its_closed",
@@ -521,6 +64,12 @@
         "name" : "Countries",
         "desc" : "Number of countries with persons active in the ticketing system"
     },
+    "its_domains" : {
+        "divid" : "its_domains",
+        "column" : "domains",
+        "name" : "Domains",
+        "desc" : "Number of distinct domains with persons active in the ticketing system"
+    },
     "its_repositories" : {
         "divid" : "its_repositories",
         "column" : "repositories",
@@ -556,9 +105,12 @@
     },
     "mls_threads" : {
         "divid" : "mls_threads",
-        "column" : "threads",
+        "column" : "message_id",
         "name" : "Message threads",
-        "desc" : "Number of messages threads in mailing lists"
+        "desc" : "Number of messages threads in mailing lists 3",
+        "action" : "length",
+        "initiator_name" : "Initiator",
+        "length" : "Messages"
     },
     "mls_companies" : {
         "divid" : "mls_companies",
@@ -570,7 +122,13 @@
         "divid" : "mls_countries",
         "column" : "countries",
         "name" : "Countries",
-        "desc" : "Number of countries (companies, etc.) with persons active in mailing list(s)"
+        "desc" : "Number of countries with persons active in mailing list(s)"
+    },
+    "mls_domains" : {
+        "divid" : "mls_domains",
+        "column" : "domains",
+        "name" : "Domains",
+        "desc" : "Number of distinct domains with persons active in mailing list(s)"
     },
     "mls_repositories" : {
         "divid" : "mls_repositories",
@@ -653,7 +211,13 @@
         "divid" : "scm_countries",
         "column" : "countries",
         "name" : "Countries",
-        "desc" : "Number of countries (companies, etc.) with persons active in changing code"
+        "desc" : "Number of countries with persons active in changing code"
+    },
+    "scm_domains" : {
+        "divid" : "scm_domains",
+        "column" : "domains",
+        "name" : "Domains",
+        "desc" : "Number of distinct domains with persons active in changing code"
     },
     "scm_people" : {
         "divid" : "scm_people",
@@ -691,8 +255,14 @@
     "scr_new" : {
         "divid" : "scr_new",
         "column" : "new",
-        "name" : "New changesets",
-        "desc" : "For the current backlog of open changesets, number of changesets with submitted during each month."
+        "name" : "New reviews",
+        "desc" : "Number of new review processes"
+    },
+    "scr_pending" : {
+        "divid" : "scr_pending",
+        "column" : "pending",
+        "name" : "Pending reviews",
+        "desc" : "Number of pending reviews"
     },
     "scr_abandoned" : {
         "divid" : "scr_abandoned",
@@ -723,7 +293,7 @@
         "column" : "WaitingForReviewer",
         "name" : "Waiting for reviewer",
         "desc" : "Number of code review processes waiting for reviewer"
-    },
+    },        
     "scr_WaitingForSubmitter" : {
         "divid" : "scr_WaitingForSubmitter",
         "column" : "WaitingForSubmitter",
@@ -742,23 +312,17 @@
         "name" : "Organizations",
         "desc" : "Number of organizations (companies, etc.) with persons active in code review"
     },
-    "scr_submissions" : {
-        "divid" : "scr_submissions",
-        "column" : "submissions",
-        "name" : "scr_submissions",
-        "desc" : "Number of submissions for code review processes"
-    },
-    "scr_pending" : {
-        "divid" : "scr_pending",
-        "column" : "pending",
-        "name" : "scr_pending",
-        "desc" : "Number of pending code review processes"
-    },
     "scr_countries" : {
         "divid" : "scr_countries",
         "column" : "countries",
         "name" : "Countries",
-        "desc" : "Number of organizations (companies, etc.) with persons active in code review"
+        "desc" : "Number of countries with persons active in code review"
+    },
+    "scr_domains" : {
+        "divid" : "scr_domains",
+        "column" : "domains",
+        "name" : "Domains",
+        "desc" : "Number of domains with persons active in code review"
     },
     "scr_repositories" : {
         "divid" : "scr_repositories",
@@ -783,70 +347,76 @@
         "divid" : "scr_openers",
         "column" : "openers",
         "name" : "Openers",
-        "desc" : "Number of persons opening code review processes",
+        "desc" : "Number of persons closing code review processes",
         "action" : "opened"
     },
     "scr_submitters" : {
-        "divid" : "scr_submitters",
-        "column" : "submitters",
-        "name" : "Submitters",
-        "desc" : "Number of persons submitting reviews",
-        "action" : "submitted"
+         "divid" : "scr_submitters",
+         "column" : "submitters",
+         "name" : "Reviews submitters",
+         "desc" : "Number of people submitting review processes."
+     },
+    "src_reviewers" : {
+         "divid" : "scr_reviewers",
+         "column" : "reviewers",
+         "name" : "Reviewers",
+         "desc" : "Number of people reviewing contributions"
+     }
+},
+"qaforums": {
+    "qaforums_participants" : {
+        "name" : "Participants",
+        "desc" : "Number of persons posting messages",
+        "column" : "participants"
     },
-    "scr_ReviewsWaiting_ts" : {
-        "column" : "ReviewsWaiting_ts",
-        "name" : "New changesets",
-        "desc" : "Number of changesets that are open (not merged nor abandoned) at the end of the specified month."
+    "qaforums_sent" : {
+        "name" : "Messages posted",
+        "desc" : "Number of messages posted to Q&A forums(s)",
+        "column" : "sent"
     },
-    "scr_ReviewsWaitingForReviewer" : {
-        "column" : "ReviewsWaitingForReviewer",
-        "name" : "Waiting for review",
-        "desc" : "For the subset of current backlog of open changesets which are waiting for review, number of changesets submitted during each month."
+    "qaforums_qsent" : {
+        "name" : "Questions posted",
+        "desc" : "Number of questions posted to Q&A forums(s)",
+        "column": "qsent"
     },
-    "scr_ReviewsWaitingForReviewer_ts" : {
-        "column" : "ReviewsWaitingForReviewer_ts",
-        "name" : "Waiting for review",
-        "desc" : "Subset of open changesets that are waiting for review (not 'WIP', with no review or just +1) at the end of the specified month. Open changesets with 'WIP' in the subject or with -1/-2 are not counted."
+    "qaforums_asent" : {
+        "name" : "Answers posted",
+        "desc" : "Number of answers posted to Q&A forums(s)",
+        "column" : "asent"
     },
-    "scr_review_time_days_avg" : {
-        "column" : "review_time_days_avg",
-        "name" : "Review time in days (average)",
-        "desc" : "Average review time in days"
+    "qaforums_senders" : {
+        "name" : "Persons posting messages",
+        "desc" : "Number of persons posting messages to Q&A forums(s)",
+        "column" : "senders"
     },
-    "scr_review_time_days_median" : {
-        "column" : "review_time_days_median",
-        "name" : "Review time in days",
-        "desc" : "Median review time in days"
+    "qaforums_asenders" : {
+        "name" : "Persons posting answers",
+        "desc" : "Number of persons answering in Q&A forums(s)",
+        "column" : "asenders"
     },
-    "scr_review_time_pending_days_acc_median" : {
-        "column" : "review_time_pending_days_acc_median",
-        "name" : "Review time for pending in days",
-        "desc" : "Median review time for pending submissions in days"
+    "qaforums_qsenders" : {
+        "divid" : "qaforums_qsenders",
+        "name" : "Persons posting questions",
+        "desc" : "Number of persons asking questions in Q&A forums(s)",
+        "column" : "qsenders"
+    }
+
+},
+"releases": {
+    "releases_authors":{
+        "name" : "Module authors",
+        "desc" : "Module authors",
+        "column": "authors"
     },
-    "scr_review_time_pending_ReviewsWaitingForReviewer_days_acc_median" : {
-        "column" : "review_time_pending_ReviewsWaitingForReviewer_days_acc_median",
-        "name" : "Time from submission",
-        "desc" : "For open changesets at the end of the specified month, median time from the initial upload of those changesets until the end of the specified month."
+    "releases_modules":{
+        "name" : "Number of modules",
+        "desc" : "Number of modules",
+        "column": "Number of modules"
     },
-    "scr_review_time_pending_update_days_acc_median" : {
-        "column" : "review_time_pending_update_days_acc_median",
-        "name" : "Update time for pending in days",
-        "desc" : "Median update time for pending submissions in days"
-    },
-    "scr_review_time_pending_update_ReviewsWaitingForReviewer_days_acc_median" : {
-        "column" : "review_time_pending_update_ReviewsWaitingForReviewer_days_acc_median",
-        "name" : "Most recent updates",
-        "desc" : "Median age of changesets counting since updated (days)."
-    },
-    "scr_review_time_pending_upload_days_acc_median" : {
-        "column" : "review_time_pending_upload_days_acc_median",
-        "name" : "Upload time for pending in days",
-        "desc" : "Median upload time for pending submissions in days"
-    },
-    "scr_review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median" : {
-        "column" : "review_time_pending_upload_ReviewsWaitingForReviewer_days_acc_median",
-        "name" : "Time from last patchset",
-        "desc" : "For changesets that are still open at the end of the specified month, median time from the last patchset at that time until the end of the specified month."
+    "releases_releases":{
+        "name" : "Number of module releases",
+        "desc" : "Number of module releases",
+        "column": "releases"
     }
 }
 }
