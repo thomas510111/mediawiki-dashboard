@@ -21,6 +21,7 @@
 	],
 	"scr": [
             "companies",
+            "contributors",
             "companies-summary",
             "countries",
             "repos"
