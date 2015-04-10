@@ -637,7 +637,11 @@ var Mediawiki = {};
             table += "<tr>";
             table += "<td>"+(i+1)+"</td>";
             table += "<td><a href='people.html?id="+pid+"&name='>";
-            if (pid in identities) {
+            // Included in last version identifier in person_data
+            if (person_data[0].identifier !== undefined) {
+                table += person_data[0].identifier;
+            }
+            else if (pid in identities) {
                 if ('identity' in identities[pid]) {
                     // Pre sortinghat format
                     table += identities[pid].identity[0];
