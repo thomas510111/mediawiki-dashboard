@@ -596,7 +596,9 @@ var Mediawiki = {};
     function searchLocation(data) {
         var location = '-';
         if ('country' in data) {
-            var location = data.country[0];
+            if (data.country !== null) {
+                location = data.country;
+            }
         }
         return location;
     }
@@ -605,9 +607,8 @@ var Mediawiki = {};
     function searchAffiliation(data) {
         var affiliation = "-";
         if ('affiliation' in data) {
-            for (var i=0; i<data.affiliation.length;i++) {
-                affiliation = data.affiliation[i];
-                if (affiliation !== "Unknow") break; 
+            if (data.affiliation !== null) {
+                affiliation = data.affiliation;
             }
         }
         return affiliation;
