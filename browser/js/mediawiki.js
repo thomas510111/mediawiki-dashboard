@@ -592,7 +592,6 @@ var Mediawiki = {};
         return dss;
     }
 
-    // In JSON data there are several location. Select one.
     function searchLocation(data) {
         var location = '-';
         if ('country' in data) {
@@ -603,7 +602,6 @@ var Mediawiki = {};
         return location;
     }
 
-    // In JSON data there are several location. Select one.
     function searchAffiliation(data) {
         var affiliation = "-";
         if ('affiliation' in data) {
