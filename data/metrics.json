@@ -849,16 +849,16 @@
     "scr_participants":{
         "divid" : "scr_participants",
         "column" : "participants",
-        "name" : "Participants",
+        "name" : "Code review users",
         "desc" : "Number of participants in the review process",
-        "action": "events"
+        "action": "actions"
     },
     "scr_active_core_reviewers":{
         "divid" : "scr_active_core_reviewers",
         "column" : "active_core_reviewers",
-        "name" : "Active core reviewers",
+        "name" : "Code review committers",
         "desc" : "Number of active core reviewers",
-        "action": "merged"
+        "action": "+2/-2 votes"
     }
 }
 }
