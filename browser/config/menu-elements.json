@@ -24,7 +24,8 @@
             "contributors",
             "companies-summary",
             "countries",
-            "repos"
+            "repos",
+	    "backlog"
 	],
 	"wiki": [],
 	"extra": [
