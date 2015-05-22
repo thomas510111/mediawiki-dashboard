@@ -50,7 +50,31 @@ var Events = {};
                         });
             });
         }
+        var divs = $(".Scout");
+        if (divs.length > 0){
+            $.each(divs, function(id, div) {
+                loadScoutEventsData(
+                    function(){
+                        displayEventsScout(div);
+                    });
+            });
+        }
     };
+
+    function loadScoutEventsData (cb) {
+        var json_file = "data/json/scout.json";
+        $.when($.getJSON(json_file)
+                ).done(function(json_data) {
+                Events.scout = json_data;
+                cb();
+                for (var j = 0; j < data_callbacks.length; j++) {
+                    if (data_callbacks[j].called !== true) data_callbacks[j]();
+                    data_callbacks[j].called = true;
+                }
+        }).fail(function() {
+            console.log("Events widget disabled. Missing " + json_file);
+        });
+    }
 
     function loadEventsData (ds_name, cb) {
         suffix = ds_name.toLowerCase();
@@ -73,6 +97,13 @@ var Events = {};
         // if (!div.id) div.id = "Parsed" + getRandomId();
         // $("#"+div.id).append(html);
         show_timeline(ds_name, event_);
+    }
+
+    function displayEventsScout (div) {
+        // var html = HTMLEvents(ds_name, event_);
+        // if (!div.id) div.id = "Parsed" + getRandomId();
+        // $("#"+div.id).append(html);
+        show_timeline_scout();
     }
 
     function HTMLEvents (ds_name, event_){
@@ -116,9 +147,118 @@ var Events = {};
         Mustache.parse(template);
         var rendered = Mustache.render(template, data);
         $('#target').html(rendered);
+    };
+
+    function get_event_type(type, data_source) {
+        // Translare event code to human language
+        var human_type = type;
+        if (data_source === "github") {
+            if (type == "CreateEvent") {
+                human_type = "new repository";
+            }
+        }
+        else if (data_source === "stackoverflow") {
+            if (type === 1) {
+                human_type = "new question";
+            } else if (type == 2) {
+                human_type = "new answer";
+            } else if (type == 3) {
+                human_type = "new comment";
+            }
+        }
+        else if (data_source === "mail") {
+            human_type = "mail sent";
+        }
+        return human_type;
     }
 
+    function get_event(data, index, fields, data_source) {
+        // Create a dict with event data
+        event = {};
+        $.each(fields, function(i) {
+            var val = undefined;
+            if (data[fields[i]] !== undefined) {
+                val = data[fields[i]][index];
+            }
+            event[fields[i]] = val;
+            if (fields[i] === "type") {
+                event[fields[i]] = get_event_type(val, data_source);
+            }
+        });
+        if (data_source === "mail") {
+            // mail events do not include type
+            event.type = "email sent";
+        }
+        return event;
+    }
 
+    function events_sort(events,  field) {
+        // All events include a date field
+        function compare(event1, event2) {
+            var res;
+
+            date1 = Date.parse(event1.date.replace(/-/g,"/"));
+            date2 = Date.parse(event2.date.replace(/-/g,"/"));
+
+            if (date1<date2) {
+                res = 1;
+            }
+            else if (date1>date2) {
+                res = -1;
+            }
+            else {
+                res = 0;
+            }
+            return res;
+        }
+        events.sort(compare);
+        return events;
+    }
+
+    show_timeline_scout = function(ds_name, event_) {
+        var events_ds = Events.scout;
+        var timeline_events = []; // All events to be shown in the timeline
+
+        // First, create the common time series format: [date:[d1,d2, ...], event:[e1,e2, ...]]
+        $.each(events_ds, function(data_source, events){
+            fields = Object.keys(events);
+            $.each(events.date, function(i){
+                event = get_event(events, i, fields,data_source);
+                event[data_source] = 1;
+                event.timestamp = moment(event.date, "YYYY-MM-DD hh:mm:ss").fromNow();
+                timeline_events.push(event);
+            });
+        });
+        // Order events in time to build a common time line with the events from all data sources
+        timeline_events = events_sort(timeline_events);
+
+        var template = $('#template_scout').html();
+
+        Mustache.parse(template);
+        var rendered = Mustache.render(template,
+                {"events":timeline_events,
+                 "limitLength" : function() {
+                     var limit = 80;
+                     return function(text, render) {
+                         var r = render(text);
+                         var keyword = 'centos';
+                         var n = r.search(new RegExp(keyword, "i"));
+                         var out = '';
+                         if (n>-1) {
+                             if (n-limit>0) {
+                                 out = "..." + r.substr(n-limit,limit);
+                             }
+                             out += "<b>"+r.substr(n,keyword.length)+"</b>";
+                             out += r.substr(n+keyword.length,limit) +'...';
+                         } else {
+                             out = r.substr(0,80) + '...';
+                         }
+                         return out;
+                     };
+                 }
+                });
+        $('#target').html(rendered);
+    };
 
     function getRandomId() {
         return Math.floor(Math.random()*1000+1);
