@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2012-2013 Bitergia
  *
  * This program is free software; you can redistribute it and/or modify
@@ -44,13 +44,13 @@ var Mediawiki = {};
     Mediawiki.getContribs = function(type, quarters) {
         var contribs_data = null;
 
-        if (type === "companies" && !quarters) 
+        if (type === "companies" && !quarters)
             contribs_data = contribs_companies;
-        else if (type === "companies" && quarters) 
+        else if (type === "companies" && quarters)
             contribs_data = contribs_companies_quarters;
-        else if (type === "people" && !quarters) 
+        else if (type === "people" && !quarters)
             contribs_data = contribs_people;
-        else if (type === "people" && quarters) 
+        else if (type === "people" && quarters)
             contribs_data = contribs_people_quarters;
         return contribs_data;
     };
@@ -61,11 +61,11 @@ var Mediawiki = {};
             filename = Report.getDataDir()+"/scr-companies-all.json";
         else if (type === "companies" && quarters)
             filename = Report.getDataDir()+"/scr-companies-quarters.json";
-        else if (type === "people" && !quarters) 
+        else if (type === "people" && !quarters)
             filename = Report.getDataDir()+"/scr-people-all.json";
         else if (type === "people" && quarters)
             filename = Report.getDataDir()+"/scr-people-quarters.json";
-        return filename;    
+        return filename;
     };
 
     Mediawiki.setContribs = function (type, quarters, data) {
@@ -78,7 +78,7 @@ var Mediawiki = {};
 
     function getIdByName(item, type) {
         var id = 0;
-        var data = null; 
+        var data = null;
         if (type === "companies")
             data = Mediawiki.getContribsCompanies();
         else if (type === "people")
@@ -307,7 +307,7 @@ var Mediawiki = {};
                 var affiliation = "Unknown";
                 if (data.uuid[i] in identities) {
                     affiliation = searchAffiliation(identities[data.uuid[i]]);
-                } 
+                }
                 table += "<td>"+affiliation+"</td>";
                 table += "<td><a href='"+data.url[i]+"'>"+sub_on_date+"</a></td>";
             }
@@ -374,7 +374,7 @@ var Mediawiki = {};
                 newdiv += "id="+people_divid+"></div>";
                 table += "<td>"+newdiv+"</td>";
                 viz_people.push(uuid);
-            } 
+            }
             table += "</tr>";
         }
         table += "</table>";
@@ -511,7 +511,7 @@ var Mediawiki = {};
         config.frame_time = true;
         if (remove_last_point) config.remove_last_point = true;
         Viz.displayMetricsEvol(ds,
-                ["num_people_1","num_people_1_5","num_people_5_10"], 
+                ["num_people_1","num_people_1_5","num_people_5_10"],
                 Mediawiki.getPeopleIntake(), divid, config);
     }
 
@@ -586,7 +586,7 @@ var Mediawiki = {};
         var dss = [];
         $.each(people_all, function(id, value) {
             for (var i=0; i<value.length;i++) {
-                if ($.inArray(value[i].ds, dss) === -1) dss.push(value[i].ds); 
+                if ($.inArray(value[i].ds, dss) === -1) dss.push(value[i].ds);
             }
         });
         return dss;
@@ -697,30 +697,50 @@ var Mediawiki = {};
     //
     // TopIssues widget
     //
-    Mediawiki.getTopIssuesFile = function() {
-        return Report.getDataDir()+"/its-top.json";
+    var top_issues;
+    var top_issues_1;
+
+    Mediawiki.getTopIssuesFile = function(its_type) {
+        return Report.getDataDir()+"/" + its_type + "-top.json";
     };
 
-    Mediawiki.setTopIssues = function (data) {
-        top_issues = data;
+    Mediawiki.setTopIssues = function (data, its_type) {
+        if (its_type === "its")
+            top_issues = data;
+        else if (its_type === "its_1")
+            top_issues_1 = data;
+        else
+            top_issues = data;
     };
 
-    Mediawiki.getTopIssues = function (type) {
-        if (type === undefined) return top_issues;
-        else return top_issues[type];
+    Mediawiki.getTopIssues = function (type, ds) {
+        if (ds === "its")
+           top_data = top_issues;
+        else if (ds === "its_1")
+           top_data = top_issues_1;
+        else
+           return top_issues;
+
+        if (type === undefined) return top_data;
+        else return top_data[type];
     };
 
     function loadTopIssues (cb) {
-        $.when($.getJSON(Mediawiki.getTopIssuesFile())
+        $.when($.getJSON(Mediawiki.getTopIssuesFile("its"))
             ).done(function(top) {
-                Mediawiki.setTopIssues (top);
+                Mediawiki.setTopIssues (top, "its");
+                cb();
+        });
+        $.when($.getJSON(Mediawiki.getTopIssuesFile("its_1"))
+            ).done(function(top) {
+                Mediawiki.setTopIssues (top, "its_1");
                 cb();
         });
     }
 
-    function displayTopIssues(divid, type, limit) {
+    function displayTopIssues(divid, type, limit, ds) {
         var table = "<table class='table table-hover'>";
-        var data = Mediawiki.getTopIssues(type);
+        var data = Mediawiki.getTopIssues(type, ds);
         var field;
         var count = 0;
         table += "<tr>";
@@ -730,7 +750,7 @@ var Mediawiki = {};
             if (data.summary[i].search("(tracking)") > -1) continue;
             table += "<tr>";
             table += "<td><a href='"+data.url[i]+"'>"+ data.issue_id[i]+"</a></td>";
-            table += "<td>"+data.summary[i]+"</td>";
+            table += "<td>"+escapeHtml(data.summary[i])+"</td>";
             table += "<td>"+Report.formatValue(data.time[i])+"</td>";
             table += "</tr>";
             ++count;
@@ -739,7 +759,22 @@ var Mediawiki = {};
         $("#"+divid).html(table);
     }
 
-     Mediawiki.convertTopIssues = function() {
+    var entityMap = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+    };
+
+    function escapeHtml(string) {
+        return String(string).replace(/[&<>"'\/]/g, function (s) {
+            return entityMap[s];
+        });
+    }
+
+    Mediawiki.convertTopIssues = function() {
         var mark = "TopIssues";
         var divs = $("."+mark);
         if (divs.length > 0) {
@@ -748,10 +783,18 @@ var Mediawiki = {};
                 div.id = mark + (unique++);
                 var type = $(this).data('type');
                 var limit = $(this).data('limit');
-                displayTopIssues(div.id, type, limit);
+
+                var ds = $(this).data('data-source');
+                var DS = Report.getDataSourceByName(ds);
+                if (DS === null) return;
+                if (DS.getData().length === 0) return;
+
+                displayTopIssues(div.id, type, limit, ds);
             });
         }
     };
+
+
 
     //
     // Testing top for Mediawiki widget
@@ -767,7 +810,7 @@ var Mediawiki = {};
                 var data = key.split(".");
                 var top_metric = data[0];
                 var top_period = data[1];
-                // List only all period 
+                // List only all period
                 if (top_period !== "") return false;
                 for (var id in basic_metrics) {
                     var metric = basic_metrics[id];

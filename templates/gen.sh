@@ -31,6 +31,15 @@ python build_panel.py --template body.template --content common/list-of-filters.
 python apply_template.py --template body.template --content its/states.tmpl > ../browser/its-states.html
 python apply_template.py --template body.template --content its/states-jira.tmpl > ../browser/its-states-jira.html
 
+# its_1 - maniphest
+python apply_template.py --template body.template --content maniphest/overview.tmpl > ../browser/maniphest.html
+python build_panel.py --template body.template --content common/list-of-filters.tmpl --conf conf/main.conf --panel maniphest-companies > ../browser/maniphest-companies.html
+python apply_template.py --template body.template --content maniphest/contributors.tmpl > ../browser/maniphest-contributors.html
+python build_panel.py --template body.template --content common/list-of-filters.tmpl --conf conf/main.conf --panel maniphest-countries > ../browser/maniphest-countries.html
+python build_panel.py --template body.template --content common/list-of-filters.tmpl --conf conf/main.conf --panel maniphest-domains > ../browser/maniphest-domains.html
+python build_panel.py --template body.template --content common/list-of-filters.tmpl --conf conf/main.conf --panel maniphest-projects > ../browser/maniphest-projects.html
+python build_panel.py --template body.template --content common/list-of-filters.tmpl --conf conf/main.conf --panel maniphest-repos > ../browser/maniphest-repos.html
+
 # irc
 python apply_template.py --template body.template --content irc/overview.tmpl > ../browser/irc.html
 #python apply_template.py --template body.template --content irc/repos.tmpl > ../browser/irc-repos.html
