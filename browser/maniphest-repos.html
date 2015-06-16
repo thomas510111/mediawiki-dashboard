@@ -36,21 +36,21 @@
 <div class="well">
   <div class="row">
     <div class="col-md-6">
-      <p>REPLACE_TEXT</p>
+      <p>Some charts and tables for top trackers in the project, and a summary of the evolution of their participation with links to more detailed information per tracker</p>
     </div>
     <div class="col-md-6">
       <!-- evolution #companies -->
-      <div class="MetricsEvol" data-data-source="REPLACE_DS_NAME"
-           data-metrics="REPLACE_METRIC0" data-legend="false"
-           data-title="REPLACE_TITLE_METRIC0" data-help="false"
+      <div class="MetricsEvol" data-data-source="its_1"
+           data-metrics="its_1_trackers" data-legend="false"
+           data-title="Active trackers per month" data-help="false"
            data-light-style="true" style="height: 80px; margin-right:20px;"></div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-12 FilterItemsNav">
-      <div class="FilterItemsNav center-block" data-data-source="REPLACE_DS_NAME"
-       data-order-by="REPLACE_ORDER_BY" data-filter="REPLACE_FILTER"></div>
+      <div class="FilterItemsNav center-block" data-data-source="its_1"
+       data-order-by="its_1_closed" data-filter="repos"></div>
     </div>
   </div>
 
@@ -59,21 +59,21 @@
     <!-- commits -->
     <div class="col-md-1"></div>
     <div class="col-md-4">
-      <div class="FilterItemsGlobal" data-data-source="REPLACE_DS_NAME"
-           data-metric="REPLACE_METRIC1" data-filter="REPLACE_FILTER"
-           data-legend-div="barchart_legend" data-limit="REPLACE_LIMIT"
-           data-order-by="REPLACE_ORDER_BY"
-           data-title="REPLACE_TITLE_METRIC1"></div>
+      <div class="FilterItemsGlobal" data-data-source="its_1"
+           data-metric="its_1_closed" data-filter="repos"
+           data-legend-div="barchart_legend" data-limit="10"
+           data-order-by="its_1_closed"
+           data-title="Issues closed per tracker"></div>
     </div>
     <!-- end commits -->
     <div class="col-md-2" id="barchart_legend"
          style="text-align:left;font-size: 1.2em;padding-top:10px;padding-left:20px;"></div>
     <!-- authors -->
     <div class="col-md-4">
-      <div class="FilterItemsGlobal" data-data-source="REPLACE_DS_NAME"
-           data-metric="REPLACE_METRIC2" data-filter="REPLACE_FILTER"
-           data-legend="false" data-limit="REPLACE_LIMIT" data-order-by="REPLACE_ORDER_BY"
-           data-title="REPLACE_TITLE_METRIC2"></div>
+      <div class="FilterItemsGlobal" data-data-source="its_1"
+           data-metric="its_1_closers" data-filter="repos"
+           data-legend="false" data-limit="10" data-order-by="its_1_closed"
+           data-title="People closing issues per tracker"></div>
     </div>
     <!-- end authors -->
     <div class="col-md-1"></div>
@@ -82,13 +82,13 @@
 
   <!-- commits per company -->
   <div id="list" class="row">
-    <div class="FilterItemsMiniCharts" data-data-source="REPLACE_DS_NAME"
-         data-metrics="REPLACE_METRIC1,REPLACE_METRIC2" data-filter="REPLACE_FILTER"
-         data-order-by="REPLACE_ORDER_BY" style="margin-right:20px;"></div>
+    <div class="FilterItemsMiniCharts" data-data-source="its_1"
+         data-metrics="its_1_closed,its_1_closers" data-filter="repos"
+         data-order-by="its_1_closed" style="margin-right:20px;"></div>
   </div>
   <div class="row"><div class="col-md-12">
-      <div class="FilterItemsNav" data-data-source="REPLACE_DS_NAME"
-       data-order-by="REPLACE_ORDER_BY" data-filter="REPLACE_FILTER"></div>
+      <div class="FilterItemsNav" data-data-source="its_1"
+       data-order-by="its_1_closed" data-filter="repos"></div>
     </div>
   </div>
 
