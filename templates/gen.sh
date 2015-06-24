@@ -81,12 +81,9 @@ python build_panel.py --template body.template --content common/list-of-filters.
 #python apply_template.py --template body.template --content scm/repos.tmpl > ../browser/scm-repos.html
 python build_panel.py --template body.template --content common/list-of-filters.tmpl --conf conf/main.conf --panel scm-repos > ../browser/scm-repos.html
 
-# scr (Github)
-python apply_template.py --template body.template --content scr_github/overview.tmpl > ../browser/scr.html
-python apply_template.py --template body.template --content scr_github/contributors.tmpl > ../browser/scr-contributors.html
 
 #scr (standard)
-#python apply_template.py --template body.template --content scr/overview.tmpl > ../browser/scr.html
+python apply_template.py --template body.template --content scr/overview.tmpl > ../browser/scr.html
 #python apply_template.py --template body.template --content scr/contributors.tmpl > ../browser/scr-contributors.html
 python apply_template.py --template body.template --content scr/backlog.tmpl > ../browser/scr-backlog.html
 python build_panel.py --template body.template --content common/list-of-filters.tmpl --conf conf/main.conf --panel scr-companies > ../browser/scr-companies.html
