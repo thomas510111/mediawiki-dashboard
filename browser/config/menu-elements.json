@@ -24,12 +24,12 @@
             "repos"
 	],
 	"scr": [
-            "companies",
             "contributors",
-            "companies-summary",
+            "Organizations",
+            "Organizations-summary",
             "countries",
             "repos",
-	    "backlog"
+	        "backlog"
 	],
 	"wiki": [],
 	"extra": [

@@ -40,8 +40,8 @@
     </div>
     <div class="col-md-6">
       <!-- evolution #organizations -->
-      <div class="MetricsEvol" data-data-source="mls"
-           data-metrics="mls_companies" data-legend="false"
+      <div class="MetricsEvol" data-data-source="its"
+           data-metrics="its_companies" data-legend="false"
            data-title="Active organizations per month" data-help="false"
            data-light-style="true" style="height: 80px; margin-right:20px;"></div>
     </div>
@@ -49,8 +49,8 @@
 
   <div class="row">
     <div class="col-md-12 FilterItemsNav">
-      <div class="FilterItemsNav center-block" data-data-source="mls"
-       data-order-by="mls_sent" data-filter="companies"></div>
+      <div class="FilterItemsNav center-block" data-data-source="its"
+       data-order-by="its_closed" data-filter="organizations"></div>
     </div>
   </div>
 
@@ -59,21 +59,21 @@
     <!-- commits -->
     <div class="col-md-1"></div>
     <div class="col-md-4">
-      <div class="FilterItemsGlobal" data-data-source="mls"
-           data-metric="mls_sent" data-filter="companies"
+      <div class="FilterItemsGlobal" data-data-source="its"
+           data-metric="its_closed" data-filter="organizations"
            data-legend-div="barchart_legend" data-limit="10"
-           data-order-by="mls_sent"
-           data-title="Mail messages per organization"></div>
+           data-order-by="its_closed"
+           data-title="Issues closed per organization"></div>
     </div>
     <!-- end commits -->
     <div class="col-md-2" id="barchart_legend"
          style="text-align:left;font-size: 1.2em;padding-top:10px;padding-left:20px;"></div>
     <!-- authors -->
     <div class="col-md-4">
-      <div class="FilterItemsGlobal" data-data-source="mls"
-           data-metric="mls_senders" data-filter="companies"
-           data-legend="false" data-limit="10" data-order-by="mls_sent"
-           data-title="Mail senders per organization"></div>
+      <div class="FilterItemsGlobal" data-data-source="its"
+           data-metric="its_closers" data-filter="organizations"
+           data-legend="false" data-limit="10" data-order-by="its_closed"
+           data-title="People closing issues per organization"></div>
     </div>
     <!-- end authors -->
     <div class="col-md-1"></div>
@@ -82,13 +82,13 @@
 
   <!-- commits per organization -->
   <div id="list" class="row">
-    <div class="FilterItemsMiniCharts" data-data-source="mls"
-         data-metrics="mls_sent,mls_senders" data-filter="companies"
-         data-order-by="mls_sent" style="margin-right:20px;"></div>
+    <div class="FilterItemsMiniCharts" data-data-source="its"
+         data-metrics="its_closed,its_closers" data-filter="organizations"
+         data-order-by="its_closed" style="margin-right:20px;"></div>
   </div>
   <div class="row"><div class="col-md-12">
-      <div class="FilterItemsNav" data-data-source="mls"
-       data-order-by="mls_sent" data-filter="companies"></div>
+      <div class="FilterItemsNav" data-data-source="its"
+       data-order-by="its_closed" data-filter="organizations"></div>
     </div>
   </div>
 

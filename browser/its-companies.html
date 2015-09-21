@@ -36,10 +36,10 @@
 <div class="well">
   <div class="row">
     <div class="col-md-6">
-      <p>Some charts and tables for top companies in the project, and a summary of the evolution of their participation with links to more detailed information per company</p>
+      <p>Some charts and tables for top organizations in the project, and a summary of the evolution of their participation with links to more detailed information per organization</p>
     </div>
     <div class="col-md-6">
-      <!-- evolution #companies -->
+      <!-- evolution #organizations -->
       <div class="MetricsEvol" data-data-source="its"
            data-metrics="its_companies" data-legend="false"
            data-title="Active companies per month" data-help="false"
@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <!-- bar charts: commits, authors company -->
+  <!-- bar charts: commits, authors organization -->
   <div class="row">
     <!-- commits -->
     <div class="col-md-1"></div>
@@ -63,7 +63,7 @@
            data-metric="its_closed" data-filter="companies"
            data-legend-div="barchart_legend" data-limit="10"
            data-order-by="its_closed"
-           data-title="Issues closed per company"></div>
+           data-title="Issues closed per organization"></div>
     </div>
     <!-- end commits -->
     <div class="col-md-2" id="barchart_legend"
@@ -73,14 +73,14 @@
       <div class="FilterItemsGlobal" data-data-source="its"
            data-metric="its_closers" data-filter="companies"
            data-legend="false" data-limit="10" data-order-by="its_closed"
-           data-title="People closing issues per company"></div>
+           data-title="People closing issues per organization"></div>
     </div>
     <!-- end authors -->
     <div class="col-md-1"></div>
   </div>
-  <!-- end of bar charts: commits, authors company -->
+  <!-- end of bar charts: commits, authors organization -->
 
-  <!-- commits per company -->
+  <!-- commits per organization -->
   <div id="list" class="row">
     <div class="FilterItemsMiniCharts" data-data-source="its"
          data-metrics="its_closed,its_closers" data-filter="companies"
@@ -93,7 +93,7 @@
   </div>
 
 </div>
-<!-- end commits per company -->
+<!-- end commits per organization -->
 
       <!-- END SECTION  HTML-->
 
