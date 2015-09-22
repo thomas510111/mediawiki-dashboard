@@ -2,13 +2,13 @@
     "menu":{
 	"scm": [
             "contributors",
-            "companies",
+            "organizations",
             "countries",  
             "repos"
 	],
 	"mls": [
             "contributors",
-            "companies",
+            "organizations",
             "countries",
             "repos"
 	],
@@ -21,7 +21,7 @@
 	],
 	"its": [
             "contributors",
-            "companies",
+            "organizations",
             "countries",
             "repos"
 	],
@@ -31,8 +31,8 @@
 	],
 	"scr": [
             "contributors",
-            "Organizations",
-            "Organizations-summary",
+            "organizations",
+            "organizations-summary",
             "countries",
             "repos",
 	        "backlog"
