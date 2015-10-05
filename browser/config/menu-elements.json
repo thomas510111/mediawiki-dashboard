@@ -43,7 +43,6 @@
         ["KPI: Who contributes code?","who_contributes_code.html"],
         ["KPI: Gerrit review queue","gerrit_review_queue.html"],
         ["KPI: Code contributors new and gone","code_contrib_new_gone.html"],
-        ["KPI: Bugzilla response time","bugzilla_response_time.html"],
         ["KPI: Maniphest response time","maniphest_response_time.html"],
         ["KPI: Top Contributors","top-contributors.html"]
 	]
