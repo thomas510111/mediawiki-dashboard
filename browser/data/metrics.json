@@ -55,13 +55,13 @@
     "its_companies" : {
         "divid" : "its_companies",
         "column" : "companies",
-        "name" : "Organziations",
+        "name" : "Organizations",
         "desc" : "Number of organizations (companies, etc.) with persons active in the ticketing system"
     },
     "its_organizations" : {
         "divid" : "its_organizations",
         "column" : "organizations",
-        "name" : "Organziations",
+        "name" : "Organizations",
         "desc" : "Number of organizations (companies, etc.) with persons active in the ticketing system"
     },
     "its_countries" : {
