@@ -32,7 +32,6 @@
 	"scr": [
             "contributors",
             "organizations",
-            "organizations-summary",
             "countries",
             "repos",
 	        "backlog"
